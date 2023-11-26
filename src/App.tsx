@@ -51,8 +51,8 @@ function App() {
                 Compromisso com ensino a distância <span>.</span>
               </Typography.Title>
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
+                A Polyglot Academy é uma empresa inovadora e diferenciada no
+                setor de ensino de idiomas.
               </p>
 
               <button>
@@ -85,8 +85,10 @@ function App() {
                 Encontre o melhor professor para <b>seu perfil!</b>
               </Typography.Title>
               <Typography.Paragraph>
-                It has survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
+                Aqui é o lugar de escolha para qualquer pessoa que deseje
+                aprender um novo idioma! Nossos programas de ensino são
+                projetados para serem flexíveis e adaptáveis, permitindo aos
+                alunos aprenderem no seu próprio ritmo.
               </Typography.Paragraph>
               <span className="badge-tag">Lorem Ipsum dolor</span>
             </Col>
@@ -97,21 +99,21 @@ function App() {
                   <List.Item.Meta
                     avatar={<HiOutlineClipboardList />}
                     title={<h3>Missão</h3>}
-                    description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+                    description="Nossa missão é fornecer um serviço de ensino de idiomas personalizado e inovador que atenda às necessidades individuais de cada aluno."
                   />
                 </List.Item>
-                <List.Item>
+                <List.Item style={{ marginTop: 10 }}>
                   <List.Item.Meta
                     avatar={<PiTargetBold />}
                     title={<h3>Visão</h3>}
-                    description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+                    description="ser um líder global no ensino de idiomas, reconhecido por nossa abordagem personalizada e inovadora."
                   />
                 </List.Item>
-                <List.Item>
+                <List.Item style={{ marginTop: 10 }}>
                   <List.Item.Meta
                     avatar={<TbChartPie />}
                     title={<h3>Valores</h3>}
-                    description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+                    description="Personalização, inovação, flexibilidade e acessibilidade. "
                   />
                 </List.Item>
               </List>
@@ -182,41 +184,59 @@ function App() {
               <Col className="comments">
                 <article className="comment" style={{ marginTop: 20 }}>
                   <Flex align="center">
-                    <Avatar style={{ marginRight: 8 }} size="large" />
+                    <Avatar
+                      style={{ marginRight: 8 }}
+                      size="large"
+                      src="https://media.licdn.com/dms/image/C5603AQGpV1idOlLwZA/profile-displayphoto-shrink_800_800/0/1517346098599?e=2147483647&v=beta&t=xJBBsEqLAZv5jkwMm-b4vmwvL_Bq0fYLUKdwjn7OHXg"
+                    />
                     <div>
-                      <h1>Jéssica Silva</h1>
-                      <p>Analista de RH</p>
+                      <h1>Wallace Ferraz</h1>
+                      <p>Auxiliar de Enfermagem</p>
                     </div>
                   </Flex>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Curabitur efficitur ipsum eget neque consectetur, eu cursus
-                    mi tincidunt.
+                    "O site de ensino de idiomas oferece uma experiência
+                    intuitiva e fácil de usar. Estou impressionado com a
+                    abordagem personalizada do site para o ensino de idiomas."
                   </p>
                 </article>
 
                 <article className="comment">
                   <Flex align="center">
-                    <Avatar style={{ marginRight: 8 }} size="large" />
+                    <Avatar
+                      style={{ marginRight: 8 }}
+                      size="large"
+                      src="https://media.licdn.com/dms/image/D4D03AQG1VIClFddOOg/profile-displayphoto-shrink_800_800/0/1692020925357?e=2147483647&v=beta&t=O5CsqwYS71xmuh6cW9vJhb3EDZRpOhL1cawzE82w8IM"
+                    />
                     <div>
-                      <h1>Jéssica Silva</h1>
-                      <p>Analista de RH</p>
+                      <h1>José Fernando</h1>
+                      <p>Estudante de Design</p>
                     </div>
                   </Flex>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    "Os materiais didáticos são bem estruturados, adaptáveis ao
+                    ritmo de aprendizado de cada aluno."
                   </p>
                 </article>
 
                 <article className="comment" style={{ marginTop: 25 }}>
                   <Flex align="center">
-                    <Avatar style={{ marginRight: 8 }} size="large" />
+                    <Avatar
+                      style={{ marginRight: 8 }}
+                      size="large"
+                      src="https://i.scdn.co/image/ab676161000051744b3c12a7a4ac6fdad8fb973c"
+                    />
                     <div>
-                      <h1>Jéssica Silva</h1>
-                      <p>Analista de RH</p>
+                      <h1>Amanda de Paula</h1>
+                      <p>Bióloga</p>
                     </div>
                   </Flex>
-                  <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                  <p>
+                    "A plataforma de ensino de idiomas se destaca pela sua
+                    versatilidade, oferecendo desde aulas básicas para
+                    iniciantes até conteúdos mais avançados para quem busca
+                    aperfeiçoamento."
+                  </p>
                 </article>
               </Col>
             </Row>
@@ -231,9 +251,11 @@ function App() {
               Aulas que você irá adorar. Garantido.
             </Typography.Title>
 
-            <Typography.Paragraph>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
+            <Typography.Paragraph
+              style={{ maxWidth: 500, textAlign: "center" }}
+            >
+              Venha e junte-se a nós na nossa jornada para tornar o aprendizado
+              de idiomas acessível e agradável para todos!
             </Typography.Paragraph>
           </div>
         </section>
@@ -247,8 +269,8 @@ function App() {
               <h2>polyglot</h2>
             </Flex>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
+              A Polyglot Academy é uma empresa inovadora e diferenciada no setor
+              de ensino de idiomas.
             </p>
           </Col>
 
