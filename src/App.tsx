@@ -1,15 +1,4 @@
-import {
-  Avatar,
-  BackTop,
-  Badge,
-  Button,
-  Col,
-  Flex,
-  List,
-  Row,
-  Space,
-  Typography,
-} from "antd";
+import { Avatar, BackTop, Col, Flex, List, Row, Space, Typography } from "antd";
 
 import { LuGithub } from "react-icons/lu";
 import { TbChartPie } from "react-icons/tb";
@@ -21,14 +10,17 @@ import { HiOutlineClipboardList } from "react-icons/hi";
 import IdeoImage from "./assets/ideo.png";
 import AmazonImage from "./assets/amazon.png";
 import GoogleImage from "./assets/google.png";
-import { Section } from "./components/Section";
 import CallPhoneImage from "./assets/phone-call.png";
 import ChillibeansImage from "./assets/chillibeans.png";
+
+import Polyglot2Image from "./assets/polyglot-2.png";
+import Polyglot3Image from "./assets/polyglot-3.png";
+import Polyglot4Image from "./assets/polyglot-4.png";
 
 function App() {
   return (
     <>
-      <header id="section" className="header container">
+      <header className="header container">
         <div className="content">
           <div className="logo">
             <CodeOutlined style={{ color: "white" }} />
@@ -76,31 +68,30 @@ function App() {
           </Row>
         </section>
 
-        <Section className="container logo-section">
+        <section className="container logo-section">
           <Space className="content" direction="horizontal" size={32}>
             <img src={AmazonImage} />
             <img src={GoogleImage} />
             <img src={ChillibeansImage} />
             <img src={IdeoImage} />
           </Space>
-        </Section>
+        </section>
 
-        <section id="company">
-          <Row>
-            <Col span={12}>
-              <span>1.</span>
-              <Typography.Title>
-                Encontre o melhor professor para
-                <b>seu perfil!</b>
+        <section id="company" className="container company-section">
+          <Row className="content">
+            <Col className="left">
+              <span className="badge-number">1.</span>
+              <Typography.Title level={1}>
+                Encontre o melhor professor para <b>seu perfil!</b>
               </Typography.Title>
-              <Typography.Text>
+              <Typography.Paragraph>
                 It has survived not only five centuries, but also the leap into
                 electronic typesetting, remaining essentially unchanged.
-              </Typography.Text>
-              <Badge>Lorem Ipsum dolor</Badge>
+              </Typography.Paragraph>
+              <span className="badge-tag">Lorem Ipsum dolor</span>
             </Col>
 
-            <Col span={12}>
+            <Col className="right">
               <List itemLayout="horizontal">
                 <List.Item>
                   <List.Item.Meta
@@ -128,128 +119,151 @@ function App() {
           </Row>
         </section>
 
-        <section id="app">
-          <Space direction="vertical" size={42}>
+        <section id="app" className="container app-section">
+          <Space direction="vertical" size={42} className="content ">
             <Flex justify="space-between" align="center">
-              <Typography.Title>Plataforma que funciona</Typography.Title>
-              <span>2.</span>
+              <Typography.Title level={1}>
+                Plataforma que funciona<span>!</span>
+              </Typography.Title>
+              <span className="badge-number">2.</span>
             </Flex>
 
-            <Row>
-              <Col span={18}>
-                <Row>
-                  <Col span={12}>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/310px-Placeholder_view_vector.svg.png" />
-                  </Col>
-
-                  <Col span={12}>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/310px-Placeholder_view_vector.svg.png" />
+            <Row className="grid" gutter={20}>
+              <Col span={8} style={{ gap: 20 }}>
+                <Row style={{ marginBottom: 32 }}>
+                  <Col>
+                    <img src={Polyglot2Image} />
                   </Col>
                 </Row>
 
                 <Row>
-                  <Col span={24}>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/310px-Placeholder_view_vector.svg.png" />
+                  <Col>
+                    <img src={Polyglot4Image} />
                   </Col>
                 </Row>
               </Col>
 
               <Col span={6}>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/310px-Placeholder_view_vector.svg.png" />
+                <Row>
+                  <Col>
+                    <img src={Polyglot3Image} />
+                  </Col>
+                </Row>
+              </Col>
+
+              <Col span={8} style={{ gap: 20 }}>
+                <Row style={{ marginBottom: 32 }}>
+                  <Col>
+                    <img src={Polyglot2Image} />
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col>
+                    <img src={Polyglot4Image} />
+                  </Col>
+                </Row>
               </Col>
             </Row>
           </Space>
         </section>
 
-        <section id="about">
-          <Row>
-            <Badge>Lorem ipsum dolor</Badge>
-            <Typography.Title>O que dizem nossos usuários</Typography.Title>
-          </Row>
+        <section id="about" className="container about-section">
+          <div className="content">
+            <Row className="title">
+              <span>Lorem ipsum dolor</span>
 
-          <Row>
-            <Col>
-              <article>
-                <div>
-                  <Avatar />
-                  <h1>Jéssica Silva</h1>
-                  <p>Analista de RH</p>
-                </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Curabitur efficitur ipsum eget neque consectetur, eu cursus mi
-                  tincidunt.
-                </p>
-              </article>
+              <Typography.Title level={1}>
+                O que dizem nossos usuários
+              </Typography.Title>
+            </Row>
 
-              <article>
-                <div>
-                  <Avatar />
-                  <h1>Jéssica Silva</h1>
-                  <p>Analista de RH</p>
-                </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Curabitur efficitur ipsum eget neque consectetur, eu cursus mi
-                  tincidunt.
-                </p>
-              </article>
+            <Row>
+              <Col className="comments">
+                <article className="comment" style={{ marginTop: 20 }}>
+                  <Flex align="center">
+                    <Avatar style={{ marginRight: 8 }} size="large" />
+                    <div>
+                      <h1>Jéssica Silva</h1>
+                      <p>Analista de RH</p>
+                    </div>
+                  </Flex>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur efficitur ipsum eget neque consectetur, eu cursus
+                    mi tincidunt.
+                  </p>
+                </article>
 
-              <article>
-                <div>
-                  <Avatar />
-                  <h1>Jéssica Silva</h1>
-                  <p>Analista de RH</p>
-                </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Curabitur efficitur ipsum eget neque consectetur, eu cursus mi
-                  tincidunt.
-                </p>
-              </article>
-            </Col>
-          </Row>
+                <article className="comment">
+                  <Flex align="center">
+                    <Avatar style={{ marginRight: 8 }} size="large" />
+                    <div>
+                      <h1>Jéssica Silva</h1>
+                      <p>Analista de RH</p>
+                    </div>
+                  </Flex>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </article>
+
+                <article className="comment" style={{ marginTop: 25 }}>
+                  <Flex align="center">
+                    <Avatar style={{ marginRight: 8 }} size="large" />
+                    <div>
+                      <h1>Jéssica Silva</h1>
+                      <p>Analista de RH</p>
+                    </div>
+                  </Flex>
+                  <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </article>
+              </Col>
+            </Row>
+          </div>
         </section>
 
-        <section>
-          <span className="divider" />
+        <section className="container phrase-section">
+          <div className="content">
+            <span className="divider"></span>
 
-          <Typography.Title>
-            Aulas que você irá adorar. Garantido.
-          </Typography.Title>
+            <Typography.Title level={1}>
+              Aulas que você irá adorar. Garantido.
+            </Typography.Title>
 
-          <Typography.Paragraph>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
-          </Typography.Paragraph>
+            <Typography.Paragraph>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </Typography.Paragraph>
+          </div>
         </section>
       </main>
 
-      <footer id="section">
-        <Row>
-          <Col span={6}>
-            <div className="logo">
-              <CodeOutlined style={{ color: "white" }} />
+      <footer className="container">
+        <Row className="content">
+          <Col span={6} className="logo">
+            <Flex>
+              <CodeOutlined style={{ color: "white", fontSize: 20 }} />
               <h2>polyglot</h2>
-            </div>
+            </Flex>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
             </p>
           </Col>
 
-          <Col span={18}>
+          <Col span={18} className="content menu">
             <div>
               <h6>Explore</h6>
               <ul>
                 <li>
-                  <a href="#"> Empresa</a>
+                  <a href="#company"> Empresa</a>
                 </li>
                 <li>
-                  <a href="#"> Plataforma</a>
+                  <a href="#app"> Plataforma</a>
                 </li>
                 <li>
-                  <a href="#"> Sobre</a>
+                  <a href="#about"> Sobre</a>
                 </li>
               </ul>
             </div>
@@ -258,27 +272,32 @@ function App() {
               <h6>Comunidade</h6>
               <ul>
                 <li>
-                  <a href="#"> Empresa</a>
+                  <a href="#company"> Empresa</a>
                 </li>
                 <li>
-                  <a href="#"> Plataforma</a>
+                  <a href="#app"> Plataforma</a>
                 </li>
                 <li>
-                  <a href="#"> Sobre</a>
+                  <a href="#about"> Sobre</a>
                 </li>
               </ul>
             </div>
 
             <div>
               <h6>Comunidade</h6>
-              <a href="#">
+              <a
+                href="https://github.com/amadorgabriel/polyglot"
+                target="_blank"
+              >
                 <LuGithub />
               </a>
             </div>
           </Col>
         </Row>
 
-        <Row>Todos os diretos reservados, 2022</Row>
+        <Row className="content" style={{ marginTop: 20 }}>
+          <Col>Todos os diretos reservados, 2022</Col>
+        </Row>
       </footer>
 
       <BackTop />
