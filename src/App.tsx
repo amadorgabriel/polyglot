@@ -90,7 +90,7 @@ function App() {
                 projetados para serem flexíveis e adaptáveis, permitindo aos
                 alunos aprenderem no seu próprio ritmo.
               </Typography.Paragraph>
-              <span className="badge-tag">Lorem Ipsum dolor</span>
+              <span className="badge-tag">Estude em qualquer lugar</span>
             </Col>
 
             <Col className="right">
@@ -106,7 +106,7 @@ function App() {
                   <List.Item.Meta
                     avatar={<PiTargetBold />}
                     title={<h3>Visão</h3>}
-                    description="ser um líder global no ensino de idiomas, reconhecido por nossa abordagem personalizada e inovadora."
+                    description="Ser um líder global no ensino de idiomas, reconhecido por nossa abordagem personalizada e inovadora."
                   />
                 </List.Item>
                 <List.Item style={{ marginTop: 10 }}>
@@ -173,7 +173,7 @@ function App() {
         <section id="about" className="container about-section">
           <div className="content">
             <Row className="title">
-              <span>Lorem ipsum dolor</span>
+              <span>Saiba mais</span>
 
               <Typography.Title level={1}>
                 O que dizem nossos usuários
