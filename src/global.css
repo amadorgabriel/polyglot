@@ -1,0 +1,23 @@
+/* Global */
+:root {
+  --black-500: #151512;
+  --yellow-500: #cae033;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Sora", sans-serif !important;
+
+  color: white;
+  background-color: #151512;
+}
+
+.header {
+  background-color: var(--black-500);
+}
+
+.site-back-top-basic {
+  color: rgba(64, 64, 64, 0.6);
+}
