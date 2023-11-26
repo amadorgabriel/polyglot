@@ -5,7 +5,6 @@ import {
   Button,
   Col,
   Flex,
-  Layout,
   List,
   Row,
   Space,
@@ -27,63 +26,66 @@ import CallPhoneImage from "./assets/phone-call.png";
 import ChillibeansImage from "./assets/chillibeans.png";
 
 function App() {
-  const { Footer } = Layout;
-
   return (
     <>
-      <Layout className="layout">
-        <Section>
-          <header className="header">
-            <Flex justify="space-between" align="center">
-              <div className="logo">
-                <CodeOutlined style={{ color: "white" }} />
-                <h2>polyglot</h2>
-              </div>
+      <header id="section" className="header container">
+        <div className="content">
+          <div className="logo">
+            <CodeOutlined style={{ color: "white" }} />
+            <h2>polyglot</h2>
+          </div>
 
-              <ul>
-                <li>Empresa</li>
-                <li>Plataforma</li>
-                <li>Sobre</li>
-              </ul>
+          <ul>
+            <li>
+              <a href="#company">Empresa</a>
+            </li>
+            <li>
+              <a href="#app">Plataforma</a>
+            </li>
+            <li>
+              <a href="#about">Sobre</a>
+            </li>
+          </ul>
 
-              <Button>Entrar</Button>
-            </Flex>
-          </header>
-        </Section>
+          <button>Entrar</button>
+        </div>
+      </header>
 
-        <Section>
-          <Row>
+      <main>
+        <section className="container">
+          <Row className="content hero-section">
             <Col span={12}>
-              <Typography.Title>
-                Compromisso com ensino a distância
+              <Typography.Title level={1}>
+                Compromisso com ensino a distância <span>.</span>
               </Typography.Title>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.{" "}
+                industry.
               </p>
-              <Button>
+
+              <button>
                 Conheça a plataforma
                 <MdOutlineArrowOutward />
-              </Button>
+              </button>
             </Col>
             <Col span={12}>
-              <img src={CallPhoneImage} />
+              <Flex align="center" justify="center">
+                <img src={CallPhoneImage} />
+              </Flex>
             </Col>
           </Row>
+        </section>
+
+        <Section className="container logo-section">
+          <Space className="content" direction="horizontal" size={32}>
+            <img src={AmazonImage} />
+            <img src={GoogleImage} />
+            <img src={ChillibeansImage} />
+            <img src={IdeoImage} />
+          </Space>
         </Section>
 
-        <Section>
-          <Flex justify="center" align="center">
-            <Space direction="horizontal" size={32}>
-              <img src={AmazonImage} />
-              <img src={GoogleImage} />
-              <img src={ChillibeansImage} />
-              <img src={IdeoImage} />
-            </Space>
-          </Flex>
-        </Section>
-
-        <Section>
+        <section id="company">
           <Row>
             <Col span={12}>
               <span>1.</span>
@@ -124,9 +126,9 @@ function App() {
               </List>
             </Col>
           </Row>
-        </Section>
+        </section>
 
-        <Section>
+        <section id="app">
           <Space direction="vertical" size={42}>
             <Flex justify="space-between" align="center">
               <Typography.Title>Plataforma que funciona</Typography.Title>
@@ -157,9 +159,9 @@ function App() {
               </Col>
             </Row>
           </Space>
-        </Section>
+        </section>
 
-        <Section>
+        <section id="about">
           <Row>
             <Badge>Lorem ipsum dolor</Badge>
             <Typography.Title>O que dizem nossos usuários</Typography.Title>
@@ -207,9 +209,9 @@ function App() {
               </article>
             </Col>
           </Row>
-        </Section>
+        </section>
 
-        <Section>
+        <section>
           <span className="divider" />
 
           <Typography.Title>
@@ -220,64 +222,64 @@ function App() {
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.
           </Typography.Paragraph>
-        </Section>
+        </section>
+      </main>
 
-        <Section>
-          <Row>
-            <Col span={6}>
-              <div className="logo">
-                <CodeOutlined style={{ color: "white" }} />
-                <h2>polyglot</h2>
-              </div>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
-              </p>
-            </Col>
+      <footer id="section">
+        <Row>
+          <Col span={6}>
+            <div className="logo">
+              <CodeOutlined style={{ color: "white" }} />
+              <h2>polyglot</h2>
+            </div>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </p>
+          </Col>
 
-            <Col span={18}>
-              <div>
-                <h6>Explore</h6>
-                <ul>
-                  <li>
-                    <a href="#"> Empresa</a>
-                  </li>
-                  <li>
-                    <a href="#"> Plataforma</a>
-                  </li>
-                  <li>
-                    <a href="#"> Sobre</a>
-                  </li>
-                </ul>
-              </div>
+          <Col span={18}>
+            <div>
+              <h6>Explore</h6>
+              <ul>
+                <li>
+                  <a href="#"> Empresa</a>
+                </li>
+                <li>
+                  <a href="#"> Plataforma</a>
+                </li>
+                <li>
+                  <a href="#"> Sobre</a>
+                </li>
+              </ul>
+            </div>
 
-              <div>
-                <h6>Comunidade</h6>
-                <ul>
-                  <li>
-                    <a href="#"> Empresa</a>
-                  </li>
-                  <li>
-                    <a href="#"> Plataforma</a>
-                  </li>
-                  <li>
-                    <a href="#"> Sobre</a>
-                  </li>
-                </ul>
-              </div>
-              
-              <div>
-                <h6>Comunidade</h6>
-                <a href="#">
-                  <LuGithub />
-                </a>
-              </div>
-            </Col>
-          </Row>
+            <div>
+              <h6>Comunidade</h6>
+              <ul>
+                <li>
+                  <a href="#"> Empresa</a>
+                </li>
+                <li>
+                  <a href="#"> Plataforma</a>
+                </li>
+                <li>
+                  <a href="#"> Sobre</a>
+                </li>
+              </ul>
+            </div>
 
-          <Row>Todos os diretos reservados, 2022</Row>
-        </Section>
-      </Layout>
+            <div>
+              <h6>Comunidade</h6>
+              <a href="#">
+                <LuGithub />
+              </a>
+            </div>
+          </Col>
+        </Row>
+
+        <Row>Todos os diretos reservados, 2022</Row>
+      </footer>
 
       <BackTop />
     </>
