@@ -1,29 +1,28 @@
-import { Avatar, BackTop, Col, Flex, List, Row, Space, Typography } from "antd";
+import { Avatar, BackTop, Col, Flex, List, Row, Space, Typography } from 'antd';
 
-import { LuGithub } from "react-icons/lu";
-import { TbChartPie } from "react-icons/tb";
-import { PiTargetBold } from "react-icons/pi";
-import { CodeOutlined } from "@ant-design/icons";
-import { MdOutlineArrowOutward } from "react-icons/md";
-import { HiOutlineClipboardList } from "react-icons/hi";
+import { LuGithub } from 'react-icons/lu';
+import { TbChartPie } from 'react-icons/tb';
+import { PiTargetBold } from 'react-icons/pi';
+import { CodeOutlined } from '@ant-design/icons';
+import { MdOutlineArrowOutward } from 'react-icons/md';
+import { HiOutlineClipboardList } from 'react-icons/hi';
 
-import IdeoImage from "./assets/ideo.png";
-import AmazonImage from "./assets/amazon.png";
-import GoogleImage from "./assets/google.png";
-import CallPhoneImage from "./assets/phone-call.png";
-import ChillibeansImage from "./assets/chillibeans.png";
+import IdeoImage from '../../assets/ideo.png';
+import AmazonImage from '../../assets/amazon.png';
+import GoogleImage from '../../assets/google.png';
+import CallPhoneImage from '../../assets/phone-call.png';
+import Polyglot2Image from '../../assets/polyglot-2.png';
+import Polyglot3Image from '../../assets/polyglot-3.png';
+import Polyglot4Image from '../../assets/polyglot-4.png';
+import ChillibeansImage from '../../assets/chillibeans.png';
 
-import Polyglot2Image from "./assets/polyglot-2.png";
-import Polyglot3Image from "./assets/polyglot-3.png";
-import Polyglot4Image from "./assets/polyglot-4.png";
-
-function App() {
+export function LandingPage() {
   return (
     <>
       <header className="header container">
         <div className="content">
           <div className="logo">
-            <CodeOutlined style={{ color: "white" }} />
+            <CodeOutlined style={{ color: 'white' }} />
             <h2>polyglot</h2>
           </div>
 
@@ -39,7 +38,7 @@ function App() {
             </li>
           </ul>
 
-          <button>Entrar</button>
+          <a href="/signin">Entrar</a>
         </div>
       </header>
 
@@ -252,7 +251,7 @@ function App() {
             </Typography.Title>
 
             <Typography.Paragraph
-              style={{ maxWidth: 500, textAlign: "center" }}
+              style={{ maxWidth: 500, textAlign: 'center' }}
             >
               Venha e junte-se a nós na nossa jornada para tornar o aprendizado
               de idiomas acessível e agradável para todos!
@@ -265,7 +264,7 @@ function App() {
         <Row className="content">
           <Col span={6} className="logo">
             <Flex>
-              <CodeOutlined style={{ color: "white", fontSize: 20 }} />
+              <CodeOutlined style={{ color: 'white', fontSize: 20 }} />
               <h2>polyglot</h2>
             </Flex>
             <p>
@@ -326,5 +325,3 @@ function App() {
     </>
   );
 }
-
-export default App;
