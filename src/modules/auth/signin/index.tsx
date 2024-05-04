@@ -3,7 +3,9 @@ import { Button, Checkbox, Form, Input } from 'antd';
 import { FaFacebookF } from 'react-icons/fa';
 import { GithubOutlined, TwitterOutlined } from '@ant-design/icons';
 
-import { AppPageMeta } from '../../../core/components/PageMeta';
+import { PageMeta } from '../../../core/components/PageMeta';
+import { AuthWrapper } from '../../../core/components/Layout/Auth';
+import { StyledMainContentView } from '../../../core/components/Layout/Auth/index.styled';
 import {
   StyledUserCard,
   StyledUserCardFooter,
@@ -11,29 +13,29 @@ import {
   StyledUserCardFooterLink,
   StyledUserCardHeader,
   StyledUserCardLogo,
-  StyledUserContainer,
   StyledUserFieldAction,
   StyledUserFieldActionLink,
   StyledUserForm,
   StyledUserFormBtn,
   StyledUserPages,
   StyledUserSocialLink,
-} from './index.styled';
-import { AuthWrapper } from '../../../core/components/Layout/Auth';
-import { StyledMainContentView } from '../../../core/components/Layout/Auth/index.styled';
-
-const onFinish = (values: any) => {
-  console.log('Success:', values);
-};
-
-const onFinishFailed = (errorInfo: any) => {
-  console.log('Failed:', errorInfo);
-};
+} from '../index.styled';
+import { useNavigate } from 'react-router-dom';
 
 export const SigninPage = () => {
+  const navigate = useNavigate();
+
+  const onFinish = (values: any) => {
+    console.log('Success:', values);
+  };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log('Failed:', errorInfo);
+  };
+
   return (
     <>
-      <AppPageMeta title="Login" />
+      <PageMeta title="Login | Polyglot Academy" />
 
       <AuthWrapper>
         <StyledMainContentView>
@@ -110,7 +112,13 @@ export const SigninPage = () => {
 
               <StyledUserCardFooter>
                 <span>Não tem uma conta?</span>
-                <StyledUserCardFooterLink>Cadastrar</StyledUserCardFooterLink>
+                <StyledUserCardFooterLink
+                  onClick={() => {
+                    navigate('/signup');
+                  }}
+                >
+                  Cadastrar
+                </StyledUserCardFooterLink>
               </StyledUserCardFooter>
             </StyledUserCard>
           </StyledUserPages>

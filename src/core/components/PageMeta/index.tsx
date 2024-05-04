@@ -5,16 +5,13 @@ import { useLocation } from 'react-router-dom';
 
 const SITE_URL = process.env.REACT_APP_SITE_URL;
 
-type AppPageMetaProps = {
+type PageMetaProps = {
   children?: ReactNode;
   title: string;
   description?: string;
 };
 
-export const AppPageMeta: React.FC<AppPageMetaProps> = ({
-  children,
-  ...rest
-}) => {
+export const PageMeta: React.FC<PageMetaProps> = ({ children, ...rest }) => {
   const { pathname } = useLocation();
 
   const defaultTitle = 'Poliglot Academy';

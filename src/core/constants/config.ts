@@ -43,11 +43,11 @@ export const defaultTheme = {
       tooltipBg: 'rgba(0, 0, 0, 0.75)',
       background: '#F4F7FE',
       primary: {
-        main: process.env.NX_PRIMARY_COLOR,
+        main: '#0A8FDC',
         contrastText: '#fff',
       },
       secondary: {
-        main: process.env.NX_SECONDARY_COLOR,
+        main: '#F04F47',
       },
       success: {
         main: '#52c41a', //'#11C15B',

@@ -15,8 +15,6 @@ type Props = {
 export const AuthWrapper: React.FC<Props> = ({ children }) => {
   return (
     <StyledAuth>
-      {/* <StyledMainAuthScrollbar> */}
-
       <StyledAuthWrap key={'wrap'}>
         <StyledAuthCard>
           <StyledAuthMainContent>
@@ -34,8 +32,6 @@ export const AuthWrapper: React.FC<Props> = ({ children }) => {
           </StyledAuthWellAction>
         </StyledAuthCard>
       </StyledAuthWrap>
-
-      {/* </StyledMainAuthScrollbar> */}
     </StyledAuth>
   );
 };
