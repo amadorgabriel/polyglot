@@ -7,11 +7,12 @@ import {
   StyledAuthWelContent,
   StyledAuthWellAction,
   StyledAuthWrap,
-  // StyledMainAuthScrollbar,
 } from './index.styled';
+
 type Props = {
   children: React.ReactNode;
 };
+
 export const AuthWrapper: React.FC<Props> = ({ children }) => {
   return (
     <StyledAuth>

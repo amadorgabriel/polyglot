@@ -3,9 +3,9 @@ import { Button, Checkbox, Form, Input } from 'antd';
 import { FaFacebookF } from 'react-icons/fa';
 import { GithubOutlined, TwitterOutlined } from '@ant-design/icons';
 
-import { PageMeta } from '../../../core/components/PageMeta';
-import { AuthWrapper } from '../../../core/components/Layout/Auth';
-import { StyledMainContentView } from '../../../core/components/Layout/Auth/index.styled';
+import { PageMeta } from '../../../components/_shared/PageMeta';
+import { AuthWrapper } from '../../../components/_shared/Layout/Auth';
+import { StyledMainContentView } from '../../../components/_shared/Layout/Auth/index.styled';
 import {
   StyledUserCard,
   StyledUserCardFooter,

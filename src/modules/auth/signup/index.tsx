@@ -14,8 +14,8 @@ import {
   StyledUserPages,
 } from '../index.styled';
 
-import { PageMeta } from '../../../core/components/PageMeta';
-import { AuthWrapper } from '../../../core/components/Layout/Auth';
+import { PageMeta } from '../../../components/_shared/PageMeta';
+import { AuthWrapper } from '../../../components/_shared/Layout/Auth';
 
 const onFinish = (values: any) => {
   console.log('Success:', values);

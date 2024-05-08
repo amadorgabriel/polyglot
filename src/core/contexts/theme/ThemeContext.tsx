@@ -4,6 +4,7 @@ import { ConfigProvider } from 'antd';
 import { ThemeProvider } from 'styled-components';
 
 import { defaultTheme } from '../../constants/config';
+import { CremaGlobalStyle } from '../../theme/CremaGlobalStyle';
 
 export interface ThemeData {
   theme: any;
@@ -39,11 +40,12 @@ export const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({
   return (
     <ThemeProvider theme={theme}>
       <ConfigProvider
-        // theme={{
-        //   token: getAntTheme(defaultTheme.theme),
-        // }}
+      // theme={{
+      //   token: getAntTheme(defaultTheme.theme),
+      // }}
       >
         {children}
+        <CremaGlobalStyle theme={theme} />
       </ConfigProvider>
     </ThemeProvider>
   );
