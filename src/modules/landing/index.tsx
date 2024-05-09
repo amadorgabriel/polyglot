@@ -15,8 +15,11 @@ import Polyglot2Image from '../../assets/polyglot-2.png';
 import Polyglot3Image from '../../assets/polyglot-3.png';
 import Polyglot4Image from '../../assets/polyglot-4.png';
 import ChillibeansImage from '../../assets/chillibeans.png';
+import { useNavigate } from 'react-router-dom';
 
 export function LandingPage() {
+  const navigate = useNavigate();
+
   return (
     <>
       <header className="header container">
@@ -38,7 +41,13 @@ export function LandingPage() {
             </li>
           </ul>
 
-          <a href="/signin">Entrar</a>
+          <button
+            onClick={() => {
+              navigate('/signin');
+            }}
+          >
+            Entrar
+          </button>
         </div>
       </header>
 

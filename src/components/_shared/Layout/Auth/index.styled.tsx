@@ -56,8 +56,21 @@ export const StyledAuthCardHeader = styled.div`
   align-items: center;
   justify-content: center;
 
+  font-size: 22px;
+
+  p {
+    margin-left: 8px;
+
+    font-family: Sora;
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 19px; /* 105.556% */
+    letter-spacing: 0.54px;
+  }
+
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
-    margin-bottom: 36px;
+    margin-bottom: 8px;
   }
 
   & img {
@@ -111,7 +124,7 @@ export const StyledAuthWellAction = styled.div`
 `;
 
 export const StyledAuthWelContent = styled.div`
-  max-width: 320px;
+  max-width: 520px;
 `;
 
 export const StyledAuth = styled(Layout)`
@@ -121,6 +134,22 @@ export const StyledAuth = styled(Layout)`
   min-height: 100vh;
   justify-content: center;
   align-items: center;
+
+  background-image: linear-gradient(
+    225deg,
+    hsl(68deg 75% 37%) 0%,
+    hsl(68deg 74% 36%) 19%,
+    hsl(68deg 73% 35%) 27%,
+    hsl(68deg 73% 34%) 34%,
+    hsl(68deg 72% 33%) 41%,
+    hsl(68deg 71% 31%) 47%,
+    hsl(68deg 71% 30%) 53%,
+    hsl(69deg 70% 29%) 59%,
+    hsl(69deg 69% 28%) 66%,
+    hsl(69deg 69% 26%) 73%,
+    hsl(69deg 68% 25%) 81%,
+    hsl(69deg 67% 24%) 100%
+  ) !important;
 
   & .ant-layout-content {
     padding: 20px;

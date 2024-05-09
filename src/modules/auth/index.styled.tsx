@@ -31,22 +31,11 @@ export const StyledUserCard = styled(Card)`
   width: 100%;
   text-align: center;
   overflow: hidden;
-  /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05); */
   border: 0;
 
   & .ant-card-body {
-    padding: 24px;
     display: flex !important;
     flex-direction: column;
-
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.lg}px) {
-      padding: 32px;
-    }
-
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.xxl}px) {
-      padding: 48px 64px;
-    }
   }
 
   & .ant-row > .ant-col {
@@ -74,6 +63,10 @@ export const StyledUserCardHeader = styled.div`
   align-items: center;
   justify-content: center;
 
+  h3 {
+    margin-top: 0;
+  }
+
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.xxl}px) {
     margin-bottom: 32px;
   }
@@ -82,19 +75,6 @@ export const StyledUserCardHeader = styled.div`
     margin-bottom: 0;
     font-weight: ${({ theme }) => theme.font.weight.medium};
     font-size: 20px;
-  }
-`;
-
-export const StyledUserCardLogo = styled.div`
-  margin-right: 8px;
-
-  [dir='rtl'] & {
-    margin-right: 0;
-    margin-left: 8px;
-  }
-
-  & img {
-    height: 24px;
   }
 `;
 

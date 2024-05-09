@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { CodeOutlined } from '@ant-design/icons';
+
 import {
   StyledAuth,
   StyledAuthCard,
@@ -19,15 +22,18 @@ export const AuthWrapper: React.FC<Props> = ({ children }) => {
       <StyledAuthWrap key={'wrap'}>
         <StyledAuthCard>
           <StyledAuthMainContent>
-            <StyledAuthCardHeader>{/* <AppLogo /> */}</StyledAuthCardHeader>
+            <StyledAuthCardHeader>
+              <CodeOutlined style={{ color: 'black', fontSize: '2rem' }} />
+              <p>Polyglot</p>
+            </StyledAuthCardHeader>
             {children}
           </StyledAuthMainContent>
           <StyledAuthWellAction>
             <StyledAuthWelContent>
-              <h2>Welcome to Crema!</h2>
+              <h2>Acesse agora mesmo!</h2>
               <p>
-                Crema is purely based on Ant Design components and follows Ant
-                Design guidelines.
+                A polyglot tem tudo o que você precisa em uma só plataforma.
+                Aprenda com os melhores professores do mundo!
               </p>
             </StyledAuthWelContent>
           </StyledAuthWellAction>

@@ -1,7 +1,12 @@
 import { Button, Checkbox, Form, Input } from 'antd';
 
 import { FaFacebookF } from 'react-icons/fa';
-import { GithubOutlined, TwitterOutlined } from '@ant-design/icons';
+import {
+  CodeOutlined,
+  GithubOutlined,
+  GoogleOutlined,
+  TwitterOutlined,
+} from '@ant-design/icons';
 
 import { PageMeta } from '../../../components/_shared/PageMeta';
 import { AuthWrapper } from '../../../components/_shared/Layout/Auth';
@@ -12,9 +17,7 @@ import {
   StyledUserCardFooterAction,
   StyledUserCardFooterLink,
   StyledUserCardHeader,
-  StyledUserCardLogo,
   StyledUserFieldAction,
-  StyledUserFieldActionLink,
   StyledUserForm,
   StyledUserFormBtn,
   StyledUserPages,
@@ -25,14 +28,6 @@ import { useNavigate } from 'react-router-dom';
 export const SigninPage = () => {
   const navigate = useNavigate();
 
-  const onFinish = (values: any) => {
-    console.log('Success:', values);
-  };
-
-  const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
-  };
-
   return (
     <>
       <PageMeta title="Login | Polyglot Academy" />
@@ -42,28 +37,21 @@ export const SigninPage = () => {
           <StyledUserPages>
             <StyledUserCard>
               <StyledUserCardHeader>
-                <StyledUserCardLogo>
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Logo-uninove.svg/2560px-Logo-uninove.svg.png"
-                    alt="crema"
-                    title="crema"
-                  />
-                </StyledUserCardLogo>
                 <h3>Faça seu Login</h3>
               </StyledUserCardHeader>
 
               <StyledUserForm
                 name="basic"
                 initialValues={{ remember: true }}
-                onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
+                onFinish={() => {
+                  navigate('/mycourses');
+                }}
+                onFinishFailed={() => {}}
               >
                 <Form.Item
                   name="email"
                   className="form-field"
-                  rules={[
-                    { required: true, message: 'Please input your Email!' },
-                  ]}
+                  rules={[{ required: true, message: 'Insira seu email!' }]}
                 >
                   <Input placeholder="Email" />
                 </Form.Item>
@@ -74,7 +62,7 @@ export const SigninPage = () => {
                   rules={[
                     {
                       required: true,
-                      message: 'Please input your Password!',
+                      message: 'Insira sua senha!',
                     },
                   ]}
                 >
@@ -84,9 +72,6 @@ export const SigninPage = () => {
                 <StyledUserFieldAction name="remember" valuePropName="checked">
                   <>
                     <Checkbox>Lembrar de mim</Checkbox>
-                    <StyledUserFieldActionLink className="user-field-action-link ml-auto">
-                      Esqueci a senha
-                    </StyledUserFieldActionLink>
                   </>
                 </StyledUserFieldAction>
 
@@ -102,10 +87,7 @@ export const SigninPage = () => {
                     <FaFacebookF />
                   </Button>
                   <Button>
-                    <GithubOutlined />
-                  </Button>
-                  <Button>
-                    <TwitterOutlined />
+                    <GoogleOutlined />
                   </Button>
                 </StyledUserSocialLink>
               </StyledUserCardFooterAction>
@@ -117,7 +99,7 @@ export const SigninPage = () => {
                     navigate('/signup');
                   }}
                 >
-                  Cadastrar
+                  Cadastre-se
                 </StyledUserCardFooterLink>
               </StyledUserCardFooter>
             </StyledUserCard>

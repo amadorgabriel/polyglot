@@ -1,11 +1,13 @@
 import { Checkbox, Form, Input } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
+import { PageMeta } from '../../../components/_shared/PageMeta';
+import { AuthWrapper } from '../../../components/_shared/Layout/Auth';
 import {
   StyledUserCard,
   StyledUserCardFooter,
   StyledUserCardFooterLink,
   StyledUserCardHeader,
-  StyledUserCardLogo,
   StyledUserContainer,
   StyledUserFieldActionLink,
   StyledUserFieldActionRow,
@@ -14,49 +16,33 @@ import {
   StyledUserPages,
 } from '../index.styled';
 
-import { PageMeta } from '../../../components/_shared/PageMeta';
-import { AuthWrapper } from '../../../components/_shared/Layout/Auth';
-
-const onFinish = (values: any) => {
-  console.log('Success:', values);
-};
-
-const onFinishFailed = (errorInfo: any) => {
-  console.log('Failed:', errorInfo);
-};
-
 export function SignupPage() {
+  const navigate = useNavigate();
+
   return (
     <>
       <PageMeta title="Cadastro | Polyglot Academy" />
 
       <AuthWrapper>
-        <StyledUserPages>
-          <StyledUserContainer key="a">
+        <StyledUserContainer key="a">
+          <StyledUserPages>
             <StyledUserCard>
               <StyledUserCardHeader>
-                <StyledUserCardLogo>
-                  <img
-                    src={'/assets/images/logo.png'}
-                    alt="crema"
-                    title="crema"
-                  />
-                </StyledUserCardLogo>
                 <h3>Cadastre-se</h3>
               </StyledUserCardHeader>
 
               <StyledUserForm
                 name="basic"
                 initialValues={{ remember: true }}
-                onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
+                onFinish={() => {
+                  navigate('/mycourses');
+                }}
+                onFinishFailed={() => {}}
               >
                 <Form.Item
                   name="name"
                   className="form-field"
-                  rules={[
-                    { required: true, message: 'Please input your Name!' },
-                  ]}
+                  rules={[{ required: true, message: 'Insira seu nome!' }]}
                 >
                   <Input type="name" placeholder="Nome" />
                 </Form.Item>
@@ -65,7 +51,7 @@ export function SignupPage() {
                   name="email"
                   className="form-field"
                   rules={[
-                    { required: true, message: 'Please input your Email!' },
+                    { required: true, message: 'Insira seu email!' },
                   ]}
                 >
                   <Input type="email" placeholder="Email" />
@@ -75,7 +61,7 @@ export function SignupPage() {
                   name="password"
                   className="form-field"
                   rules={[
-                    { required: true, message: 'Please input your Password!' },
+                    { required: true, message: 'Insira sua senha!' },
                   ]}
                 >
                   <Input type="password" placeholder="Senha" />
@@ -87,7 +73,7 @@ export function SignupPage() {
                   rules={[
                     {
                       required: true,
-                      message: 'Please input your Retype Password!',
+                      message: 'Reescreva sua senha!',
                     },
                   ]}
                 >
@@ -99,27 +85,31 @@ export function SignupPage() {
                   valuePropName="checked"
                 >
                   <>
-                    <Checkbox>Eu concordo com</Checkbox>
+                    <Checkbox>Concordo com os</Checkbox>
                     <StyledUserFieldActionLink className="user-field-action-link">
                       Termos e condições
                     </StyledUserFieldActionLink>
                   </>
                 </StyledUserFieldActionRow>
 
-                <StyledUserFormBtn type="primary" htmlType="submit">
+                <StyledUserFormBtn type='primary' htmlType="submit">
                   Cadastrar
                 </StyledUserFormBtn>
               </StyledUserForm>
 
               <StyledUserCardFooter>
-                <span>Já tenho uma conta</span>
-                <StyledUserCardFooterLink>
-                  Faça login aqui
+                <span>Já tem uma conta?</span>
+                <StyledUserCardFooterLink
+                  onClick={() => {
+                    navigate('/signin');
+                  }}
+                >
+                  Faça login aqui!
                 </StyledUserCardFooterLink>
               </StyledUserCardFooter>
             </StyledUserCard>
-          </StyledUserContainer>
-        </StyledUserPages>
+          </StyledUserPages>
+        </StyledUserContainer>
       </AuthWrapper>
     </>
   );
