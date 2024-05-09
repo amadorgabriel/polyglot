@@ -42,7 +42,7 @@ const CourseCell: React.FC<CourseCellProps> = ({ course }) => {
           <div className="ant-row ant-row-middle">
             <StyledCourseCellRate>Rate</StyledCourseCellRate>
             <StyledCourseCellBtn type="primary">
-              Certificate
+              Certificado
             </StyledCourseCellBtn>
           </div>
         ) : (
@@ -53,7 +53,7 @@ const CourseCell: React.FC<CourseCellProps> = ({ course }) => {
             />
             <StyledCourseCellRating>{course.rating}</StyledCourseCellRating>
             <StyledCourseCellBtn className="btn-primary-outline">
-              View Course
+             Veja o curso
             </StyledCourseCellBtn>
           </div>
         )}

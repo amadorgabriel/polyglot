@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { Avatar, BackTop, Col, Flex, List, Row, Space, Typography } from 'antd';
 
 import { LuGithub } from 'react-icons/lu';
@@ -15,7 +16,6 @@ import Polyglot2Image from '../../assets/polyglot-2.png';
 import Polyglot3Image from '../../assets/polyglot-3.png';
 import Polyglot4Image from '../../assets/polyglot-4.png';
 import ChillibeansImage from '../../assets/chillibeans.png';
-import { useNavigate } from 'react-router-dom';
 
 export function LandingPage() {
   const navigate = useNavigate();

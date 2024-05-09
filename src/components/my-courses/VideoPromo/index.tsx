@@ -23,10 +23,10 @@ import {
 } from './index.styled';
 
 const tabs = [
-  { id: 1, title: 'Class Detail', slug: 'class' },
-  { id: 2, title: 'Assignments', slug: 'assignments' },
-  { id: 3, title: 'Projects', slug: 'projects' },
-  { id: 4, title: 'Exams', slug: 'exams' },
+  { id: 1, title: 'Detalhes da classe', slug: 'class' },
+  { id: 2, title: 'atribuições', slug: 'assignments' },
+  { id: 3, title: 'Projetos', slug: 'projects' },
+  { id: 4, title: 'Exames', slug: 'exams' },
 ];
 
 type VideoPromoProps = {
@@ -39,10 +39,7 @@ const VideoPromo: React.FC<VideoPromoProps> = ({ videoPromo }) => {
   return (
     <StyledVideoPromoCard heightFull>
       <StyledReactPlayerView>
-        <StyledReactPlayer
-          controls={true}
-          url="https://www.youtube.com/embed/X1dz0xRbSJc"
-        />
+        <StyledReactPlayer controls={true} url="https://youtu.be/06sKvW2k20o" />
       </StyledReactPlayerView>
       <StyledVideoPromo>
         <StyledVideoPromoHeader>
@@ -55,7 +52,7 @@ const VideoPromo: React.FC<VideoPromoProps> = ({ videoPromo }) => {
               <StyledBorderRightBefore>
                 {videoPromo.category}
               </StyledBorderRightBefore>
-              <span className="text-primary">+ Follow Mentor</span>
+              <span className="text-primary">+ Siga mentor</span>
             </p>
           </StyledVideoPromoHeaderContent>
           <StyledVideoPromoHeaderAction>
@@ -87,20 +84,20 @@ const VideoPromo: React.FC<VideoPromoProps> = ({ videoPromo }) => {
                   className="btn-primary-outline"
                   style={{ fontSize: 10, whiteSpace: 'nowrap' }}
                 >
-                  See Calendar
+                 Veja Calendário
                 </Button>
                 <Button
                   size="small"
                   style={{ fontSize: 10, whiteSpace: 'nowrap' }}
                   type="primary"
                 >
-                  View details
+                 Ver detalhes
                 </Button>
               </StyledVideoTabsActionLeft>
               <StyledVideoTabsActionRight>
-                <span>{item.students} Students enrolled</span>
+                <span>{item.students} Alunos matriculados</span>
                 <span className="text-secondary">
-                  {item.daysLeft} Days left
+                  {item.daysLeft} Dias restantes
                 </span>
               </StyledVideoTabsActionRight>
             </StyledVideoTabsAction>

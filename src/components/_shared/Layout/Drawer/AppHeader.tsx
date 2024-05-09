@@ -1,54 +1,49 @@
-import { Dropdown } from 'antd';
-import { FiMoreVertical } from 'react-icons/fi';
-import { AiOutlineMenu } from 'react-icons/ai';
+import { Button, Dropdown, Space } from 'antd';
+import { useNavigate } from 'react-router-dom';
+
+import { FiMoreHorizontal } from 'react-icons/fi';
+import { CodeOutlined, LogoutOutlined } from '@ant-design/icons';
+
 import {
   StyledDrawerLayoutHeader,
   StyledDrawerLayoutHeaderDesk,
-  StyledDrawerLayoutHeaderMobile,
   StyledDrawerLayoutHeaderSearch,
-  StyledDropdownWrapper,
 } from './index.styled';
 
-const items = [
-  { key: 1, label: <></> },
-  { key: 2, label: <></> },
-  { key: 3, label: <></> },
-];
+const AppHeader = () => {
+  const navigate = useNavigate();
 
-type AppHeaderProps = {
-  showDrawer: () => void;
-};
-
-const AppHeader = ({ showDrawer }: AppHeaderProps) => {
   return (
     <StyledDrawerLayoutHeader>
-      <a className="trigger" onClick={showDrawer}>
-        <AiOutlineMenu />
-      </a>
-      {/* <AppLogo /> */}
+      <div className="logo">
+        <CodeOutlined style={{ color: 'white' }} />
+        <h2>polyglot</h2>
+      </div>
+
       <StyledDrawerLayoutHeaderSearch placeholder="Pesquise aqui" />
       <StyledDrawerLayoutHeaderDesk>
-        {/* <AppLanguageSwitcher />
-        <AppHeaderMessages />
-        <AppNotifications /> */}
+        <Dropdown
+          menu={{
+            items: [
+              {
+                key: '0',
+                title: '',
+                itemIcon: (
+                  <Space>
+                    Sair
+                    <LogoutOutlined />
+                  </Space>
+                ),
+                onClick: () => {
+                  navigate('/');
+                },
+              },
+            ],
+          }}
+        >
+          <Button type="text" shape="circle" icon={<FiMoreHorizontal />} />
+        </Dropdown>
       </StyledDrawerLayoutHeaderDesk>
-      <StyledDrawerLayoutHeaderMobile>
-        <StyledDropdownWrapper>
-          <Dropdown
-            menu={{ items }}
-            overlayClassName="dropdown-wrapper"
-            getPopupContainer={(triggerNode) => triggerNode}
-            trigger={['click']}
-          >
-            <a
-              className="ant-dropdown-link-mobile"
-              onClick={(e) => e.preventDefault()}
-            >
-              <FiMoreVertical />
-            </a>
-          </Dropdown>
-        </StyledDropdownWrapper>
-      </StyledDrawerLayoutHeaderMobile>
     </StyledDrawerLayoutHeader>
   );
 };

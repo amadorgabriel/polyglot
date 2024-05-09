@@ -27,7 +27,7 @@ export const MyCoursesPage = () => {
           </Col>
         ))}
 
-        <Col xs={24} className="mb-0" key={'c'}>
+        {/* <Col xs={24} className="mb-0" key={'c'}>
           <AppRowContainer>
             <Col xs={24} sm={12} lg={6}>
               <MyProfile profile={academyData.profile} />
@@ -41,7 +41,7 @@ export const MyCoursesPage = () => {
               <MyCourses courses={academyData.courses} />
             </StyledMyCourseRoot>
           </AppRowContainer>
-        </Col>
+        </Col> */}
 
         <Col xs={24} sm={24} lg={10} xxl={12} key={'g'}>
           <VideoPromo videoPromo={academyData.videoPromo} />

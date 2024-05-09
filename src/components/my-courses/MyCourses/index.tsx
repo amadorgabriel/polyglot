@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 
-import clsx from 'clsx';
 import { List } from 'antd';
 
 import CourseCell from './CourseCell';
 import AppCard from '../../_shared/AppCard';
 import { CoursesType } from '../../../core/types/my-courses';
 import {
-  StyledCategoryBadge,
   StyledMyCategoryItem,
   StyledMyCourseHeader,
 } from './index.styled';
@@ -33,13 +31,7 @@ const MyCourses: React.FC<MyCoursesProps> = ({ courses }) => {
             key={index}
             onClick={() => handleChangeCategory(item.slug)}
           >
-            {/* <StyledCategoryBadge
-              className={clsx({
-                active: item.slug === selectedCategory,
-              })}
-              key={index}
-            >
-            </StyledCategoryBadge> */}
+
               {item.title}
           </StyledMyCategoryItem>
         ))}

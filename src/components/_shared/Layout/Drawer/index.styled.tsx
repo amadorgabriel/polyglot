@@ -10,8 +10,8 @@ export const StyledDrawerLayoutHeader = styled(Header)`
   padding-left: 20px;
   padding-right: 20px;
   color: ${({ theme }) => theme.palette.text.primary}!important;
-  background-color: ${({ theme }) => theme.palette.background.paper}!important;
-  border-bottom: 1px solid ${({ theme }) => theme.palette.borderColor}!important;
+  background-color: #1a202c !important;
+  border-bottom: 1px solid #1a202c !important;
   height: 56px;
   line-height: 1;
   transition: all 0.1s linear;
@@ -22,6 +22,26 @@ export const StyledDrawerLayoutHeader = styled(Header)`
   z-index: 9;
   display: flex;
   align-items: center;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    font-size: 22px;
+
+    h2 {
+      margin-left: 8px;
+
+      color: #fdfdfd;
+      font-family: Sora;
+      font-size: 1.375rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 19px; /* 105.556% */
+      letter-spacing: 0.54px;
+    }
+  }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
     padding-left: 30px;
@@ -121,6 +141,7 @@ export const StyledDrawerLayoutHeaderSearch = styled(Search)`
 
 export const StyledDrawerLayoutHeaderDesk = styled.div`
   display: none;
+  background-color: white !important;
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
     display: flex;

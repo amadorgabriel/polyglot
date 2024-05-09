@@ -40,14 +40,14 @@ const MyProfile: React.FC<MyProfileProps> = ({ profile }) => {
               />
             </StyledMyProfileThumb>
             <h4>{achievements}</h4>
-            <p className="text-truncate">Achievements</p>
+            <p className="text-truncate">Realizações</p>
           </StyledMyProfileFooterItem>
           <StyledMyProfileFooterItem>
             <StyledMyProfileIcon>
               <UserOutlined style={{ fontSize: 34, color: '#FD3A84' }} />
             </StyledMyProfileIcon>
             <h4>{friends}</h4>
-            <p className="text-truncate">Friends</p>
+            <p className="text-truncate">Amigas</p>
           </StyledMyProfileFooterItem>
         </StyledMyProfileFooter>
       </StyledMyProfileContent>
