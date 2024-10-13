@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom/client';
 
 import { App } from './main';
 
-import './core/theme/global.scss';
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

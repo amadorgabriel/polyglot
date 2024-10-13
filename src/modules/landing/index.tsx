@@ -8,20 +8,22 @@ import { CodeOutlined } from '@ant-design/icons';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import { HiOutlineClipboardList } from 'react-icons/hi';
 
-import IdeoImage from '../../assets/ideo.png';
-import AmazonImage from '../../assets/amazon.png';
-import GoogleImage from '../../assets/google.png';
-import CallPhoneImage from '../../assets/phone-call.png';
-import Polyglot2Image from '../../assets/polyglot-2.png';
-import Polyglot3Image from '../../assets/polyglot-3.png';
-import Polyglot4Image from '../../assets/polyglot-4.png';
-import ChillibeansImage from '../../assets/chillibeans.png';
+import IdeoImage from '../../assets/landing/ideo.png';
+import AmazonImage from '../../assets/landing/amazon.png';
+import GoogleImage from '../../assets/landing/google.png';
+import CallPhoneImage from '../../assets/landing/phone-call.png';
+import Polyglot2Image from '../../assets/landing/polyglot-2.png';
+import Polyglot3Image from '../../assets/landing/polyglot-3.png';
+import Polyglot4Image from '../../assets/landing/polyglot-4.png';
+import ChillibeansImage from '../../assets/landing/chillibeans.png';
+
+import { StyledLanding } from './index.styled';
 
 export function LandingPage() {
   const navigate = useNavigate();
 
   return (
-    <>
+    <StyledLanding>
       <header className="header container">
         <div className="content">
           <div className="logo">
@@ -331,6 +333,6 @@ export function LandingPage() {
       </footer>
 
       <BackTop />
-    </>
+    </StyledLanding>
   );
 }
