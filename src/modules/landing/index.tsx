@@ -23,7 +23,7 @@ export function LandingPage() {
   const navigate = useNavigate();
 
   return (
-    <StyledLanding>
+    <StyledLanding className='body-lp'>
       <header className="header container">
         <div className="content">
           <div className="logo">

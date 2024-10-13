@@ -5,8 +5,12 @@ export const CremaGlobalStyle = createGlobalStyle`
   html,
   body,
   #root {
+    padding: 0;
+    margin: 0;
+
     font-family: ${({ theme }: { theme: any }) => theme.font.family};
     color: ${({ theme }: { theme: any }) => theme.palette.text.primary};
+    scroll-behavior: smooth;
   }
 
   canvas {
@@ -27,6 +31,14 @@ export const CremaGlobalStyle = createGlobalStyle`
       theme.breakpoints.sm + 320}px ) {
       font-size: ${({ theme }: { theme: any }) => theme.font.size.lg};
     } */
+  }
+
+  body.body-lp {
+    box-sizing: border-box;
+    font-family: 'Sora', sans-serif !important;
+
+    color: white;
+    background-color: #151512;
   }
 
   .link {

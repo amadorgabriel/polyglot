@@ -1,28 +1,7 @@
 import styled from 'styled-components';
 
-export const StyledLanding = styled.div`
+export const StyledLanding = styled.body`
   /* Global */
-  :root {
-    --black-500: #151512;
-    --yellow-500: #cae033;
-    --yellow-700: #b1c52e;
-    --yellow-900: #5b6616;
-  }
-
-  body {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Sora', sans-serif !important;
-
-    color: white;
-    background-color: #151512;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
   ::-moz-selection {
     color: #151512;
     background: #cae033;
@@ -189,7 +168,7 @@ export const StyledLanding = styled.div`
       line-height: normal;
 
       span {
-        color: var(--yellow-500);
+        color: #cae033;
       }
     }
 
@@ -236,7 +215,7 @@ export const StyledLanding = styled.div`
 
   .logo-section {
     height: 150px;
-    background-color: var(--yellow-500);
+    background-color: #cae033;
 
     .ant-space {
       display: flex;
