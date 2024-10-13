@@ -35,13 +35,13 @@ export const StyledAuthCard = styled(Card)`
 `;
 
 export const StyledAuthMainContent = styled.div`
-  padding: 24px;
+  /* padding: 24px; */
   display: flex;
   flex-direction: column;
   width: 100%;
+  background-color: #313541;
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.sm}px) {
-    padding: 20px;
     width: 50%;
   }
 
@@ -51,22 +51,20 @@ export const StyledAuthMainContent = styled.div`
 `;
 
 export const StyledAuthCardHeader = styled.div`
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 52px 42px 0 42px;
 
+  margin-bottom: 24px;
   font-size: 22px;
 
-  p {
-    margin-left: 8px;
-
-    font-family: Sora;
-    font-size: 1.375rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 19px; /* 105.556% */
+  h1 {
+    margin: 0;
+    /* line-height: 40px; 105.556% */
+    font-size: 30px;
+    color: white;
     letter-spacing: 0.54px;
+    font-style: normal;
+
+    font-weight: 400;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
@@ -89,7 +87,7 @@ export const StyledAuthWellAction = styled.div`
   position: relative;
   padding: 24px;
   display: none;
-  background-color: ${({ theme }) => theme.palette.gray[900]};
+  background-color: #2b3137;
   color: white;
   font-size: ${({ theme }) => theme.font.size.base};
   width: 100%;
@@ -125,6 +123,37 @@ export const StyledAuthWellAction = styled.div`
 
 export const StyledAuthWelContent = styled.div`
   max-width: 520px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h2 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .ant-segmented {
+    width: 220px !important;
+    background-color: #898b9116 !important;
+    color: #fff !important;
+
+    .ant-segmented-item {
+      background-color: transparent !important;
+
+    }
+
+    .ant-segmented-item-selected {
+      color: #fff !important;
+      background-color: #9b34e0 !important;
+    }
+  }
 `;
 
 export const StyledAuth = styled(Layout)`
@@ -135,21 +164,7 @@ export const StyledAuth = styled(Layout)`
   justify-content: center;
   align-items: center;
 
-  background-image: linear-gradient(
-    225deg,
-    hsl(68deg 75% 37%) 0%,
-    hsl(68deg 74% 36%) 19%,
-    hsl(68deg 73% 35%) 27%,
-    hsl(68deg 73% 34%) 34%,
-    hsl(68deg 72% 33%) 41%,
-    hsl(68deg 71% 31%) 47%,
-    hsl(68deg 71% 30%) 53%,
-    hsl(69deg 70% 29%) 59%,
-    hsl(69deg 69% 28%) 66%,
-    hsl(69deg 69% 26%) 73%,
-    hsl(69deg 68% 25%) 81%,
-    hsl(69deg 67% 24%) 100%
-  ) !important;
+  background-color: #1f2527;
 
   & .ant-layout-content {
     padding: 20px;
@@ -173,10 +188,11 @@ export const StyledMainContentView = styled(Content)`
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 20px 20px 0;
+  padding: 20px 40px 0 40px !important;
+
   min-height: auto !important;
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
-    padding: 30px 32px 0;
+    padding: 30px 52px 0 52px;
   }
 `;

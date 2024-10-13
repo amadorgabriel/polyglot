@@ -4,8 +4,8 @@ import { FaFacebookF } from 'react-icons/fa';
 import {
   CodeOutlined,
   GithubOutlined,
-  GoogleOutlined,
   TwitterOutlined,
+  GoogleOutlined,
 } from '@ant-design/icons';
 
 import { PageMeta } from '../../../components/_shared/PageMeta';
@@ -36,10 +36,6 @@ export const SigninPage = () => {
         <StyledMainContentView>
           <StyledUserPages>
             <StyledUserCard>
-              <StyledUserCardHeader>
-                <h3>Faça seu Login</h3>
-              </StyledUserCardHeader>
-
               <StyledUserForm
                 name="basic"
                 initialValues={{ remember: true }}
@@ -53,7 +49,7 @@ export const SigninPage = () => {
                   className="form-field"
                   rules={[{ required: true, message: 'Insira seu email!' }]}
                 >
-                  <Input placeholder="Email" />
+                  <Input placeholder="Email" size="large" type="email" />
                 </Form.Item>
 
                 <Form.Item
@@ -66,7 +62,7 @@ export const SigninPage = () => {
                     },
                   ]}
                 >
-                  <Input type="password" placeholder="Insira sua senha" />
+                  <Input type="password" placeholder="Senha" size="large" />
                 </Form.Item>
 
                 <StyledUserFieldAction name="remember" valuePropName="checked">
@@ -80,20 +76,8 @@ export const SigninPage = () => {
                 </StyledUserFormBtn>
               </StyledUserForm>
 
-              <StyledUserCardFooterAction>
-                <span>Ou entrar com</span>
-                <StyledUserSocialLink>
-                  <Button>
-                    <FaFacebookF />
-                  </Button>
-                  <Button>
-                    <GoogleOutlined />
-                  </Button>
-                </StyledUserSocialLink>
-              </StyledUserCardFooterAction>
-
               <StyledUserCardFooter>
-                <span>Não tem uma conta?</span>
+                <span>Ainda não tem uma conta?</span>
                 <StyledUserCardFooterLink
                   onClick={() => {
                     navigate('/signup');
@@ -101,10 +85,30 @@ export const SigninPage = () => {
                 >
                   Cadastre-se
                 </StyledUserCardFooterLink>
+                .
               </StyledUserCardFooter>
             </StyledUserCard>
           </StyledUserPages>
         </StyledMainContentView>
+
+        <StyledUserCardFooterAction>
+          <span>Ou entre com</span>
+
+          <StyledUserSocialLink>
+            <Button>
+              <FaFacebookF />
+            </Button>
+            <Button>
+              <GoogleOutlined />
+            </Button>
+            <Button>
+              <GithubOutlined />
+            </Button>
+            <Button>
+              <TwitterOutlined />
+            </Button>
+          </StyledUserSocialLink>
+        </StyledUserCardFooterAction>
       </AuthWrapper>
     </>
   );

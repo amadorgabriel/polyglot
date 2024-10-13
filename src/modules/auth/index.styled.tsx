@@ -29,7 +29,7 @@ export const StyledUserContainer = styled.div`
 export const StyledUserCard = styled(Card)`
   max-width: 480px;
   width: 100%;
-  text-align: center;
+  background-color: transparent;
   overflow: hidden;
   border: 0;
 
@@ -90,8 +90,8 @@ export const StyledUserForm = styled(Form)`
   text-align: left;
   margin-bottom: 12px;
 
-  [dir='rtl'] & {
-    text-align: right;
+  input {
+    border-radius: 4px !important;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.xxl}px) {
@@ -105,12 +105,25 @@ export const StyledUserForm = styled(Form)`
 
 export const StyledUserFormBtn = styled(Button)`
   width: 100%;
+
+  max-width: 160px;
+  background-color: #9b34e0 !important;
+  border-color: #9b34e0 !important;
+
+  &:hover {
+    background-color: #7b28b2 !important;
+    border-color: #7b28b2 !important;
+  }
 `;
 
 export const StyledUserFieldAction = styled(Form.Item)`
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+
+  span {
+    color: ${({ theme }) => theme.palette.gray[400]} !important;
+  }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.sm}px) {
     flex-direction: row;
@@ -169,13 +182,14 @@ export const StyledUserFieldActionLink = styled.span`
 `;
 
 export const StyledUserCardFooter = styled.div`
-  color: ${({ theme }) => theme.palette.gray[700]};
+  color: ${({ theme }) => theme.palette.gray[600]};
+
   font-size: ${({ theme }) => theme.font.size.base};
 `;
 
 export const StyledUserCardFooterLink = styled.span`
   margin-left: 8px;
-  color: ${({ theme }) => theme.palette.primary.main};
+  color: #9b34e0;
   cursor: pointer;
   display: inline-block;
 
@@ -189,14 +203,13 @@ export const StyledUserCardFooterAction = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 8px;
+  background-color: #555863;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.xxl}px) {
-    margin-bottom: 16px;
-  }
+  width: 100%;
+  height: 46px;
 
   & > span {
-    color: ${({ theme }) => theme.palette.gray[600]};
+    color: white;
     font-size: ${({ theme }) => theme.font.size.base};
     margin-right: 16px;
 
@@ -228,13 +241,16 @@ export const StyledUserSocialLink = styled.div`
     width: 36px;
     min-width: 36px;
     height: 36px;
+    color: #e5e7eb;
 
     &:hover {
       background-color: ${({ theme }) => rgba(theme.palette.tooltipBg, 0.04)};
+      color: #9b34e0 !important;
     }
 
     &:focus {
       background-color: ${({ theme }) => rgba(theme.palette.tooltipBg, 0.15)};
+      color: #9b34e0 !important;
     }
 
     &:after {
