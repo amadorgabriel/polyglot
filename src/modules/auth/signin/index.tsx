@@ -1,8 +1,7 @@
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Checkbox, Form, Input, message } from 'antd';
 
 import { FaFacebookF } from 'react-icons/fa';
 import {
-  CodeOutlined,
   GithubOutlined,
   TwitterOutlined,
   GoogleOutlined,
@@ -24,25 +23,38 @@ import {
   StyledUserSocialLink,
 } from '../index.styled';
 import { useNavigate } from 'react-router-dom';
+import { useAuthRoleAlternativesContext } from '../../../core/contexts/auth/role-alternatives';
 
 export const SigninPage = () => {
   const navigate = useNavigate();
+  const [messageApi, contextHolder] = message.useMessage();
+
+  const {} = useAuthRoleAlternativesContext();
+
+  function signIn() {
+    navigate(`/courses`);
+  }
 
   return (
     <>
-      <PageMeta title="Login | Polyglot Academy" />
+      <PageMeta title="Login" />
 
       <AuthWrapper>
         <StyledMainContentView>
           <StyledUserPages>
             <StyledUserCard>
+              <StyledUserCardHeader></StyledUserCardHeader>
+
               <StyledUserForm
                 name="basic"
                 initialValues={{ remember: true }}
-                onFinish={() => {
-                  navigate('/mycourses');
+                onFinish={signIn}
+                onFinishFailed={() => {
+                  messageApi.open({
+                    type: 'error',
+                    content: 'Não foi possível fazer o login',
+                  });
                 }}
-                onFinishFailed={() => {}}
               >
                 <Form.Item
                   name="email"

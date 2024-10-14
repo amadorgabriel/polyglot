@@ -1,4 +1,4 @@
-import { Checkbox, Form, Input } from 'antd';
+import { Checkbox, Form, Input, message } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
 import { PageMeta } from '../../../components/_shared/PageMeta';
@@ -15,56 +15,60 @@ import {
   StyledUserFormBtn,
   StyledUserPages,
 } from '../index.styled';
+import { useAuthRoleAlternativesContext } from '../../../core/contexts/auth/role-alternatives';
 
 export function SignupPage() {
   const navigate = useNavigate();
+  const [messageApi, contextHolder] = message.useMessage();
 
+  const { } = useAuthRoleAlternativesContext();
+
+  function signUp() {
+    navigate(`/courses`);
+  }
   return (
     <>
-      <PageMeta title="Cadastro | Polyglot Academy" />
+      <PageMeta title="Cadastro " />
 
       <AuthWrapper>
         <StyledUserContainer key="a">
           <StyledUserPages>
             <StyledUserCard>
-              <StyledUserCardHeader>
-                <h3>Cadastre-se</h3>
-              </StyledUserCardHeader>
+              <StyledUserCardHeader></StyledUserCardHeader>
 
               <StyledUserForm
                 name="basic"
                 initialValues={{ remember: true }}
-                onFinish={() => {
-                  navigate('/mycourses');
+                onFinish={signUp}
+                onFinishFailed={() => {
+                  messageApi.open({
+                    type: 'error',
+                    content: 'Não foi possível fazer o cadastro',
+                  });
                 }}
-                onFinishFailed={() => {}}
               >
                 <Form.Item
                   name="name"
                   className="form-field"
                   rules={[{ required: true, message: 'Insira seu nome!' }]}
                 >
-                  <Input type="name" placeholder="Nome" />
+                  <Input type="name" size="large" placeholder="Nome" />
                 </Form.Item>
 
                 <Form.Item
                   name="email"
                   className="form-field"
-                  rules={[
-                    { required: true, message: 'Insira seu email!' },
-                  ]}
+                  rules={[{ required: true, message: 'Insira seu email!' }]}
                 >
-                  <Input type="email" placeholder="Email" />
+                  <Input type="email" size="large" placeholder="Email" />
                 </Form.Item>
 
                 <Form.Item
                   name="password"
                   className="form-field"
-                  rules={[
-                    { required: true, message: 'Insira sua senha!' },
-                  ]}
+                  rules={[{ required: true, message: 'Insira sua senha!' }]}
                 >
-                  <Input type="password" placeholder="Senha" />
+                  <Input type="password" size="large" placeholder="Senha" />
                 </Form.Item>
 
                 <Form.Item
@@ -77,7 +81,11 @@ export function SignupPage() {
                     },
                   ]}
                 >
-                  <Input type="password" placeholder="Repita a senha" />
+                  <Input
+                    type="password"
+                    size="large"
+                    placeholder="Repita a senha"
+                  />
                 </Form.Item>
 
                 <StyledUserFieldActionRow
@@ -92,7 +100,7 @@ export function SignupPage() {
                   </>
                 </StyledUserFieldActionRow>
 
-                <StyledUserFormBtn type='primary' htmlType="submit">
+                <StyledUserFormBtn type="primary" htmlType="submit">
                   Cadastrar
                 </StyledUserFormBtn>
               </StyledUserForm>

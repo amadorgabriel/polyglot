@@ -158,11 +158,11 @@ export const StyledUserFieldActionRow = styled(StyledUserFieldAction)`
 
   & .user-field-action-link {
     padding-top: 2px;
+    color: #9b34e0 !important;
   }
 `;
 
 export const StyledUserFieldActionLink = styled.span`
-  color: ${({ theme }) => theme.palette.primary.main};
   font-size: ${({ theme }) => theme.font.size.base};
   cursor: pointer;
 

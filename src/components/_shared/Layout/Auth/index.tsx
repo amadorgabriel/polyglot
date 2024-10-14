@@ -1,5 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
+import { Segmented } from 'antd';
+import { useLocation } from 'react-router-dom';
+
+import { IUser } from '../../../../core/config/redux/auth/types';
+import { useAuthRoleAlternativesContext } from '../../../../core/contexts/auth/role-alternatives';
 import {
   StyledAuth,
   StyledAuthCard,
@@ -9,14 +14,15 @@ import {
   StyledAuthWellAction,
   StyledAuthWrap,
 } from './index.styled';
-import { Segmented } from 'antd';
 
 type Props = {
   children: React.ReactNode;
 };
 
 export const AuthWrapper: React.FC<Props> = ({ children }) => {
-  const [role, setRole] = useState<'teacher' | 'student'>('student');
+  const { role, setRole } = useAuthRoleAlternativesContext();
+
+  const { pathname } = useLocation();
 
   return (
     <StyledAuth>
@@ -33,7 +39,10 @@ export const AuthWrapper: React.FC<Props> = ({ children }) => {
             <StyledAuthWelContent>
               <Segmented
                 size="small"
-                onChange={(value) => setRole(value as 'teacher' | 'student')}
+                defaultValue={role}
+                onChange={(value) => {
+                  setRole(value as IUser['role']);
+                }}
                 options={[
                   {
                     label: <div style={{ padding: 4 }}>👨‍🎓 Aluno(a)</div>,
@@ -50,8 +59,9 @@ export const AuthWrapper: React.FC<Props> = ({ children }) => {
                 <h2>
                   {role === 'student' ? '👨‍🎓' : '👩‍🏫'}
                   <br />
-                  Bem vindo de volta,
-                  <br />
+                  {pathname === '/signup'
+                    ? 'Estamos feliz por te ver  aqui,'
+                    : 'Bem vindo de volta, '}
                   <span
                     style={{
                       color: '#9B34E0',
