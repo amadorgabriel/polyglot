@@ -15,13 +15,22 @@ const AppHeader = () => {
 
   return (
     <StyledDrawerLayoutHeader>
-      <div className="logo">
-        <CodeOutlined style={{ color: 'white' }} />
-        <h2>polyglot</h2>
+      <div
+        className="logo"
+        style={{
+          display: 'flex',
+        }}
+      >
+        <CodeOutlined
+          style={{ color: 'black', fontSize: '22px', marginRight: '8px' }}
+        />
+        <h2>Polyglot Academy</h2>
       </div>
 
       <StyledDrawerLayoutHeaderSearch placeholder="Pesquise aqui" />
+
       <StyledDrawerLayoutHeaderDesk>
+
         <Dropdown
           menu={{
             items: [

@@ -32,8 +32,8 @@ export const appThemeFont = {
 export const defaultTheme = {
   theme: {
     spacing: 4,
-    cardRadius: '16px',
-    cardRadius30: '30px',
+    // cardRadius: cardRadius,
+    // cardRadius30: ThemeStyleRadius.MODERN,
     cardShadow: '0 0 5px 5px rgba(0,0,0,0.03)',
     direction: 'ltr',
     palette: {
@@ -41,7 +41,10 @@ export const defaultTheme = {
       borderColor: '#0000001f',
       dividerColor: 'rgba(0, 0, 0, 0.06)',
       tooltipBg: 'rgba(0, 0, 0, 0.75)',
-      background: '#F4F7FE',
+      background: {
+        paper: '#FFFFFF',
+        default: '#F4F7FE',
+      },
       primary: {
         main: '#0A8FDC',
         contrastText: '#fff',
@@ -102,10 +105,24 @@ export const defaultTheme = {
     },
     divider: 'rgba(224, 224, 224, 1)',
     font: appThemeFont,
-    // sidebar: {
-    //   light: LightSidebar,
-    //   dark: DarkSidebar,
-    // },
+    sidebar: {
+      light: {
+        sidebarBgColor: '#fff',
+        sidebarTextColor: 'rgba(0, 0, 0, 0.60)',
+        sidebarHeaderColor: '#fff',
+        sidebarMenuSelectedBgColor: '#F4F7FE',
+        sidebarMenuSelectedTextColor: 'rgba(0, 0, 0, 0.87)',
+        mode: 'light',
+      },
+      dark: {
+        sidebarBgColor: '#313541',
+        sidebarTextColor: '#fff',
+        sidebarHeaderColor: '#313541',
+        sidebarMenuSelectedBgColor: '#F4F7FE',
+        sidebarMenuSelectedTextColor: 'rgba(0, 0, 0, 0.87)',
+        mode: 'dark',
+      },
+    },
     breakpoints: {
       xs: 480,
       sm: 576,

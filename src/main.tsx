@@ -24,7 +24,7 @@ export const App = () => (
                 <Route path="/signin" element={<SigninPage />} />
                 <Route path="/signup" element={<SignupPage />} />
 
-                <Route path="/courses" element={<ComingSoon />} />
+                <Route path="/courses" element={<MyCoursesPage />} />
                 <Route path="/course/:courseId" element={<ComingSoon />} />
 
                 <Route path="*" element={<Error404 />} />

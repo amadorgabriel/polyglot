@@ -6,6 +6,7 @@ export const StyledUserPages = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  width: 84% !important;
 
   & > div {
     flex: 1;
@@ -29,8 +30,10 @@ export const StyledUserContainer = styled.div`
 export const StyledUserCard = styled(Card)`
   max-width: 480px;
   width: 100%;
-  background-color: transparent;
   overflow: hidden;
+
+  background-color: transparent !important;
+  border-radius: 0 !important;
   border: 0;
 
   & .ant-card-body {

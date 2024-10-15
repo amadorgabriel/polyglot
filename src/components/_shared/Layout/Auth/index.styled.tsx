@@ -146,7 +146,6 @@ export const StyledAuthWelContent = styled.div`
 
     .ant-segmented-item {
       background-color: transparent !important;
-
     }
 
     .ant-segmented-item-selected {
@@ -188,11 +187,11 @@ export const StyledMainContentView = styled(Content)`
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 20px 40px 0 40px !important;
-
+  padding: 20px 20px 0;
   min-height: auto !important;
+  //background-color: ${({ theme }) => theme.palette.background.default};
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
-    padding: 30px 52px 0 52px;
+    padding: 30px 32px 0;
   }
 `;

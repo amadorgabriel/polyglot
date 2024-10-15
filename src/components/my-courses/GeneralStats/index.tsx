@@ -36,6 +36,7 @@ const GeneralStats: React.FC<GeneralStatsProps> = ({ stats }) => {
         <StyledGeneralStatsAvatar style={{ backgroundColor: stats.bgcolor }}>
           {getIcon[stats.icon] ? getIcon[stats.icon] : getIcon['default']}
         </StyledGeneralStatsAvatar>
+
         <StyledGeneralStatsContent>
           <div>
             <h3>{stats.count}</h3>
