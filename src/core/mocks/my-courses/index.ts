@@ -42,10 +42,10 @@ export const academyData: AcademyType = {
   ],
   profile: {
     id: 1,
-    profile_pic: '/assets/images/avatar/A1.jpg',
-    name: 'Donald O Donhue',
-    designation: 'Aluna',
-    achievements: 2300,
+    profile_pic: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfcmUC96OhfxsSjyYVVZ5S7Ith_fRFidm8qA&s',
+    name: 'Renato Nogueira',
+    designation: 'Professor',
+    achievements: 23,
     friends: 38,
   },
   courses: {
