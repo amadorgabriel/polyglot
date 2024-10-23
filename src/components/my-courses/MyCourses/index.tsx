@@ -5,7 +5,11 @@ import { List } from 'antd';
 
 import CourseCell from './CourseCell';
 import AppCard from '../../_shared/AppCard';
-import { StyledCategoryBadge, StyledMyCategoryItem, StyledMyCourseHeader } from './index.styled';
+import {
+  StyledCategoryBadge,
+  StyledMyCategoryItem,
+  StyledMyCourseHeader,
+} from './index.styled';
 
 type MyCoursesProps = {
   courses: any;
@@ -21,7 +25,14 @@ const MyCourses: React.FC<MyCoursesProps> = ({ courses }) => {
   };
 
   return (
-    <AppCard className="no-card-space-ltr-rtl" heightFull title="Meus cursos">
+    <AppCard
+      className="no-card-space-ltr-rtl"
+      heightFull
+      title="Meus cursos"
+      style={{
+        maxHeight: '600px',
+      }}
+    >
       <StyledMyCourseHeader>
         {courses.categories.map((item: any, index: any) => (
           <StyledMyCategoryItem
@@ -39,9 +50,12 @@ const MyCourses: React.FC<MyCoursesProps> = ({ courses }) => {
           </StyledMyCategoryItem>
         ))}
       </StyledMyCourseHeader>
+
       <List
         dataSource={courses.courses}
-        renderItem={(data, index) => <CourseCell key={index} course={data as any} />}
+        renderItem={(data, index) => (
+          <CourseCell key={index} course={data as any} />
+        )}
       />
     </AppCard>
   );

@@ -1,15 +1,15 @@
-import {Button, List} from 'antd';
-import {darken} from 'polished';
+import { Button, List } from 'antd';
+import { darken } from 'polished';
 import styled from 'styled-components';
 
 export const StyledCourseCell = styled(List.Item)`
   display: flex;
   flex-direction: column;
-  padding: 8px 20px;
+  padding: 8px 20px !important;
   align-items: flex-start;
   flex-wrap: nowrap;
 
-  @media screen and (min-width: ${({theme}) => theme.breakpoints.xs}px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.xs}px) {
     flex-direction: row;
     align-items: center;
   }
@@ -21,7 +21,7 @@ export const StyledCourseCellContent = styled.div`
   width: 100%;
   margin-bottom: 10px;
 
-  @media screen and (min-width: ${({theme}) => theme.breakpoints.sm}px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.sm}px) {
     width: 55%;
     margin-bottom: 0;
     margin-right: 8px;
@@ -37,10 +37,12 @@ export const StyledCourseCellThumb = styled.div`
   }
 
   & img {
-    width: 60px;
-    height: 60px;
+    width: 68px;
+    height: 68px;
     overflow: hidden;
     display: block;
+    object-fit: cover;
+    border-radius: 4px !important;
   }
 `;
 
@@ -49,25 +51,25 @@ export const StyledCourseCellInfo = styled.div`
 
   & h3 {
     display: inline-block;
-    font-weight: ${({theme}) => theme.font.weight.medium};
+    font-weight: ${({ theme }) => theme.font.weight.medium};
     margin-bottom: 2px;
-    font-size: ${({theme}) => theme.font.size.base};
+    font-size: ${({ theme }) => theme.font.size.base};
   }
 
   & p {
     margin-bottom: 0;
-    color: ${({theme}) => theme.palette.text.secondary};
+    color: ${({ theme }) => theme.palette.text.secondary};
   }
 `;
 
 export const StyledCourseCellAction = styled.div`
   display: flex;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
 
-  @media screen and (min-width: ${({theme}) => theme.breakpoints.sm}px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.sm}px) {
     margin-left: auto;
-    width: 45%;
+    /* width: 45%; */
     justify-content: flex-end;
 
     [dir='rtl'] & {
@@ -96,15 +98,15 @@ export const StyledCourseCellBtn = styled(Button)`
   padding: 8px 9px 7px;
   font-size: 13px;
   height: auto;
-  font-weight: ${({theme}) => theme.font.weight.medium};
+  font-weight: ${({ theme }) => theme.font.weight.medium};
 `;
 
 export const StyledCourseCellRating = styled.span`
   margin-left: 8px;
   margin-right: 8px;
-  font-size: ${({theme}) => theme.font.size.base};
-  @media screen and (min-width: ${({theme}) => theme.breakpoints.xxl}px) {
-    font-size: ${({theme}) => theme.font.size.lg};
+  font-size: ${({ theme }) => theme.font.size.base};
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.xxl}px) {
+    font-size: ${({ theme }) => theme.font.size.lg};
   }
 `;
 
@@ -117,7 +119,7 @@ export const StyledCourseCellMenu = styled.div`
     margin-right: auto;
   }
 
-  @media screen and (min-width: ${({theme}) => theme.breakpoints.sm}px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.sm}px) {
     margin-left: 4px;
 
     [dir='rtl'] & {
@@ -148,16 +150,16 @@ export const StyledMyCategoryItem = styled.div`
 
 export const StyledCategoryBadge = styled.span`
   cursor: pointer;
-  background-color: ${({theme}) =>
+  background-color: ${({ theme }) =>
     darken(0.078, theme.palette.background.default)};
-  color: ${({theme}) => theme.palette.text.primary};
+  color: ${({ theme }) => theme.palette.text.primary};
   padding: 6px 12px 7.1px;
   border-radius: 30px;
   display: block;
   transition: all 0.2s ease;
 
   &.active {
-    background-color: ${({theme}) => theme.palette.primary.main};
-    color: ${({theme}) => theme.palette.primary.contrastText};
+    background-color: ${({ theme }) => theme.palette.primary.main};
+    color: ${({ theme }) => theme.palette.primary.contrastText};
   }
 `;

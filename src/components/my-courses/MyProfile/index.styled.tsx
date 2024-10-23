@@ -8,7 +8,7 @@ export const StyledMyProfileCard = styled(AppCard)`
   display: flex;
   flex-direction: column;
 
-  max-height: 416px;
+  max-height: 476px;
 `;
 
 export const StyledMyProfileContent = styled.div`
@@ -110,7 +110,11 @@ export const StyledMyProfileFooterItem = styled.div`
 
 export const StyledMyProfileThumb = styled.div`
   margin-bottom: 12px;
+  width: 46px;
+  height: 46px;
 `;
 export const StyledMyProfileIcon = styled.div`
   margin-bottom: 8px;
+  width: 30px;
+  height: 30px;
 `;

@@ -9,7 +9,7 @@ const AppMenu = () => {
   });
 
   return (
-    <Dropdown menu={{ items }} trigger={['click']}>
+    <Dropdown menu={{ items }} trigger={['click']} disabled>
       <a
         className="ant-dropdown-link cr-dropdown-link"
         onClick={(e) => e.preventDefault()}

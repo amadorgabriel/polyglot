@@ -11,6 +11,7 @@ import {
   StyledCourseCellThumb,
 } from './index.styled';
 import AppMenu from '../../_shared/AppMenu';
+import { FireFilled, FireOutlined } from '@ant-design/icons';
 
 type CourseCellProps = {
   course: {
@@ -39,23 +40,21 @@ const CourseCell: React.FC<CourseCellProps> = ({ course }) => {
       <StyledCourseCellAction>
         {course.isCompleted ? (
           <div className="ant-row ant-row-middle">
-            <StyledCourseCellRate>Rate</StyledCourseCellRate>
+            <StyledCourseCellRate>Avaliar</StyledCourseCellRate>
             <StyledCourseCellBtn type="primary">
-              Certificate
+              Certificado
             </StyledCourseCellBtn>
           </div>
         ) : (
           <div className="ant-row ant-row-middle">
-            <img
-              src={'/assets/images/dashboard/academy/rating.svg'}
-              alt="rating"
-            />
+            <FireFilled />
             <StyledCourseCellRating>{course.rating}</StyledCourseCellRating>
             <StyledCourseCellBtn className="btn-primary-outline">
-              View Course
+              Detalhes
             </StyledCourseCellBtn>
           </div>
         )}
+
         <StyledCourseCellMenu>
           <AppMenu />
         </StyledCourseCellMenu>

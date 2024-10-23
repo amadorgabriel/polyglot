@@ -32,8 +32,9 @@ const MyProfile: React.FC<MyProfileProps> = ({ profile }) => {
           <StyledMyProfileFooterItem>
             <StyledMyProfileThumb>
               <img
-                src={'~/assets/my-courses/achievements.svg'}
-                alt="achievements"
+                src={
+                  'https://ivrnet.com/wp-content/uploads/2020/04/icon-aa-1.png'
+                }
               />
             </StyledMyProfileThumb>
             <h4>{achievements}</h4>
