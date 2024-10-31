@@ -26,22 +26,6 @@ export type NotificationDataType = {
   date: any;
 };
 
-export type CoursesType = {
-  categories: {
-    id: number;
-    title: string;
-    slug: string;
-  }[];
-  courses: {
-    id: number;
-    title: string;
-    duration: string;
-    rating: number;
-    isCompleted: boolean;
-    thumb: string;
-  }[];
-};
-
 export type VideoPromoDataType = {
   title: string;
   owner: string;
@@ -82,7 +66,6 @@ export type AcademyType = {
   academicStats: AcademicStatsType[];
   profile: ProfileType;
   notifications: NotificationDataType[];
-  courses: CoursesType;
   videoPromo: VideoPromoDataType;
   learningData: LearningDataType[];
   latestResults: LatestResultDataType[];

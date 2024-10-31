@@ -10,21 +10,44 @@ import {
   StyledMyCategoryItem,
   StyledMyCourseHeader,
 } from './index.styled';
-import { useFindCourses } from '../../../core/domain/courses/courses.hook';
+import {
+  useDeleteCourse,
+  useFindCourses,
+} from '../../../core/domain/courses/courses.hook';
 
-type MyCoursesProps = {
-  courses: any;
+export type CategoryType = {
+  id: number;
+  title: string;
+  slug: string;
+  disabled?: boolean;
 };
 
-const MyCourses: React.FC<MyCoursesProps> = ({ courses }) => {
-  const [selectedCategory, setSelectedCategory] = useState(
-    courses.categories[0].slug
+const MyCourses: React.FC = () => {
+  const categories: CategoryType[] = [
+    { id: 1, title: 'Todos', slug: 'all' },
+    { id: 3, title: 'Arquivados', slug: 'archived', disabled: true },
+  ];
+
+  const [selectedCategory, setSelectedCategory] = useState<string>(
+    categories[0].slug
   );
 
   const { data, isLoading } = useFindCourses();
 
   const handleChangeCategory = (category: string) => {
     setSelectedCategory(category);
+  };
+
+  const deteleCourseMutation = useDeleteCourse();
+
+  const handleDeleteCourse = (id: number) => {
+    try {
+      deteleCourseMutation.mutateAsync({
+        id: id,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -37,14 +60,15 @@ const MyCourses: React.FC<MyCoursesProps> = ({ courses }) => {
       }}
     >
       <StyledMyCourseHeader>
-        {courses.categories.map((item: any, index: any) => (
+        {categories.map((item, index) => (
           <StyledMyCategoryItem
             key={index}
-            onClick={() => handleChangeCategory(item.slug)}
+            onClick={() => !item.disabled && handleChangeCategory(item.slug)}
           >
             <StyledCategoryBadge
               className={clsx({
                 active: item.slug === selectedCategory,
+                disabled: item.disabled,
               })}
               key={index}
             >
@@ -57,7 +81,13 @@ const MyCourses: React.FC<MyCoursesProps> = ({ courses }) => {
       <List
         loading={isLoading}
         dataSource={data}
-        renderItem={(data, index) => <CourseCell key={index} course={data} />}
+        renderItem={(data, index) => (
+          <CourseCell
+            key={index}
+            course={data}
+            onDelete={(id) => handleDeleteCourse(id)}
+          />
+        )}
       />
     </AppCard>
   );

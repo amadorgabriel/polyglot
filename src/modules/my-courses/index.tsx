@@ -28,7 +28,7 @@ export const MyCoursesPage = () => {
         </Col>
 
         <StyledMyCourseRoot xs={24} sm={24} lg={12}>
-          <MyCourses courses={academyData.courses} />
+          <MyCourses />
         </StyledMyCourseRoot>
 
         <StyledAcaNotificationRoot xs={24} sm={12} lg={6}>

@@ -37,6 +37,24 @@ export function useUpdateCourse(id: number, course: UpdateCourseDto) {
   return mutation;
 }
 
+export function useDeleteCourse() {
+  const queryClient = useQueryClient();
+  const [messageApi, contextHolder] = message.useMessage();
+
+  const mutation = useMutation(coursesService.delete, {
+    onSuccess(res) {
+      messageApi.open({
+        type: 'success',
+        content: 'Curso excluído com sucesso!',
+      });
+
+      queryClient.refetchQueries('all-courses');
+    },
+  });
+
+  return mutation;
+}
+
 export function useDetailCourse(id: number) {
   return useQuery(['detail-courses', id], () => coursesService.detail(id), {
     enabled: !!id,

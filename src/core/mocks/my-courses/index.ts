@@ -49,58 +49,6 @@ export const academyData: AcademyType = {
     achievements: 23,
     friends: 38,
   },
-  courses: {
-    categories: [
-      { id: 1, title: 'Todos', slug: 'all' },
-      { id: 2, title: 'Em andamento', slug: 'active' },
-      { id: 3, title: 'Arquivados', slug: 'archived' },
-    ],
-    courses: [
-      {
-        id: 1,
-        title: 'Inglês para Iniciantes',
-        duration: '4 Fev 2020 - 22 Fev 2020',
-        rating: 8.7,
-        isCompleted: false,
-        thumb:
-          'https://edusoftlearning.com/wp-content/uploads/2018/10/Edusoft-the-English-Language-Learning-Experts-1080x540.jpg',
-      },
-      {
-        id: 2,
-        title: 'Inglês para Negócios',
-        duration: '4 Fev 2020 - 22 Fev 2020',
-        rating: 8.7,
-        isCompleted: false,
-        thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjttACGjZDkBbQTooKypeimTzjEiC51rd4jA&s',
-      },
-      {
-        id: 3,
-        title: 'Francês para Conversação',
-        duration: '4 Fev 2020 - 22 Fev 2020',
-        rating: 8.7,
-        isCompleted: true,
-        thumb: 'https://cdn.wizard.com.br/wp-content/uploads/2019/08/14113136/moca-torre-eiffel-com-bandeira-francesa.jpg',
-      },
-      {
-        id: 4,
-        title: 'Desenvolvimento web',
-        duration: '4 Fev 2020 - 22 Fev 2020',
-        rating: 8.7,
-        isCompleted: false,
-        thumb:
-          'https://www.hardware.com.br/static/wp/2022/07/04/2-1.jpg?fit=scale&fm=pjpg&h=1600&ixlib=php-3.3.1&w=2500&wpsize=large',
-      },
-      {
-        id: 5,
-        title: 'Alemão para Profissionais de TI',
-        duration: '4 Fev 2020 - 22 Fev 2020',
-        rating: 8.7,
-        isCompleted: false,
-        thumb:
-          'https://www.meupositivo.com.br/doseujeito/wp-content/uploads/2018/06/tecnologias-alemas-que-revolucionaram-o-mundo.jpg',
-      },
-    ],
-  },
   notifications: [
     {
       id: 1,
