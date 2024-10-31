@@ -1,7 +1,9 @@
-import axios, { AxiosInstance } from "axios";
+import axios, { AxiosInstance } from 'axios';
+
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 export const jwtAxios: AxiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL: API_KEY,
   headers: {
     'Content-Type': 'application/json',
   },

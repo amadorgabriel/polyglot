@@ -1,5 +1,16 @@
 import { useNavigate } from 'react-router-dom';
-import { Avatar, BackTop, Col, Flex, List, Row, Space, Typography } from 'antd';
+import {
+  Avatar,
+  BackTop,
+  Col,
+  Descriptions,
+  Flex,
+  Image,
+  List,
+  Row,
+  Space,
+  Typography,
+} from 'antd';
 
 import { LuGithub } from 'react-icons/lu';
 import { TbChartPie } from 'react-icons/tb';
@@ -11,10 +22,15 @@ import { HiOutlineClipboardList } from 'react-icons/hi';
 import IdeoImage from '../../assets/landing/ideo.png';
 import AmazonImage from '../../assets/landing/amazon.png';
 import GoogleImage from '../../assets/landing/google.png';
+
 import CallPhoneImage from '../../assets/landing/phone-call.png';
-import Polyglot2Image from '../../assets/landing/polyglot-2.png';
-import Polyglot3Image from '../../assets/landing/polyglot-3.png';
-import Polyglot4Image from '../../assets/landing/polyglot-4.png';
+import Polyglot1Image from '../../assets/landing/SignIn.png';
+import Polyglot2Image from '../../assets/landing/SignIn_1.png';
+import Polyglot3Image from '../../assets/landing/SignUp.png';
+import Polyglot4Image from '../../assets/landing/SignUp_1.png';
+import Polyglot5Image from '../../assets/landing/StudentPanel.png';
+import Polyglot6Image from '../../assets/landing/TeacherPanel.png';
+import Polyglot7Image from '../../assets/landing/CourseDetail.png';
 import ChillibeansImage from '../../assets/landing/chillibeans.png';
 
 import { StyledLanding } from './index.styled';
@@ -23,7 +39,7 @@ export function LandingPage() {
   const navigate = useNavigate();
 
   return (
-    <StyledLanding className='body-lp'>
+    <StyledLanding className="body-lp">
       <header className="header container">
         <div className="content">
           <div className="logo">
@@ -72,7 +88,7 @@ export function LandingPage() {
             </Col>
             <Col span={12}>
               <Flex align="center" justify="center">
-                <img src={CallPhoneImage} />
+                <Image src={CallPhoneImage} preview={false} />
               </Flex>
             </Col>
           </Row>
@@ -80,10 +96,14 @@ export function LandingPage() {
 
         <section className="container logo-section">
           <Space className="content" direction="horizontal" size={32}>
-            <img src={AmazonImage} />
-            <img src={GoogleImage} />
-            <img src={ChillibeansImage} />
-            <img src={IdeoImage} />
+            <Image src={AmazonImage} preview={false} title="Logo da Amazon" />
+            <Image src={GoogleImage} preview={false} title="Logo da Google" />
+            <Image
+              src={ChillibeansImage}
+              preview={false}
+              title="Logo da Chillibeans"
+            />
+            <Image src={IdeoImage} preview={false} title="Logo da Ideo" />
           </Space>
         </section>
 
@@ -144,21 +164,13 @@ export function LandingPage() {
               <Col span={8} style={{ gap: 20 }}>
                 <Row style={{ marginBottom: 32 }}>
                   <Col>
-                    <img src={Polyglot2Image} />
+                    <Image src={Polyglot1Image} />
                   </Col>
                 </Row>
 
                 <Row>
                   <Col>
-                    <img src={Polyglot4Image} />
-                  </Col>
-                </Row>
-              </Col>
-
-              <Col span={6}>
-                <Row>
-                  <Col>
-                    <img src={Polyglot3Image} />
+                    <Image src={Polyglot3Image} />
                   </Col>
                 </Row>
               </Col>
@@ -166,13 +178,31 @@ export function LandingPage() {
               <Col span={8} style={{ gap: 20 }}>
                 <Row style={{ marginBottom: 32 }}>
                   <Col>
-                    <img src={Polyglot2Image} />
+                    <Image src={Polyglot6Image} />
                   </Col>
                 </Row>
 
                 <Row>
                   <Col>
-                    <img src={Polyglot4Image} />
+                    <Image.PreviewGroup
+                      items={[Polyglot7Image, Polyglot5Image]}
+                    >
+                      <Image src={Polyglot7Image} />
+                    </Image.PreviewGroup>
+                  </Col>
+                </Row>
+              </Col>
+
+              <Col span={8} style={{ gap: 20 }}>
+                <Row style={{ marginBottom: 32 }}>
+                  <Col>
+                    <Image src={Polyglot2Image} />
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col>
+                    <Image src={Polyglot4Image} />
                   </Col>
                 </Row>
               </Col>

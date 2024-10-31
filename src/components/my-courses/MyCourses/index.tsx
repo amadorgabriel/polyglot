@@ -10,6 +10,7 @@ import {
   StyledMyCategoryItem,
   StyledMyCourseHeader,
 } from './index.styled';
+import { useFindCourses } from '../../../core/domain/courses/courses.hook';
 
 type MyCoursesProps = {
   courses: any;
@@ -19,6 +20,8 @@ const MyCourses: React.FC<MyCoursesProps> = ({ courses }) => {
   const [selectedCategory, setSelectedCategory] = useState(
     courses.categories[0].slug
   );
+
+  const { data, isLoading } = useFindCourses();
 
   const handleChangeCategory = (category: string) => {
     setSelectedCategory(category);
@@ -52,10 +55,9 @@ const MyCourses: React.FC<MyCoursesProps> = ({ courses }) => {
       </StyledMyCourseHeader>
 
       <List
-        dataSource={courses.courses}
-        renderItem={(data, index) => (
-          <CourseCell key={index} course={data as any} />
-        )}
+        loading={isLoading}
+        dataSource={data}
+        renderItem={(data, index) => <CourseCell key={index} course={data} />}
       />
     </AppCard>
   );

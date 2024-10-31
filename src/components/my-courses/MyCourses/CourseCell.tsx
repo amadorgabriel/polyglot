@@ -11,17 +11,20 @@ import {
   StyledCourseCellThumb,
 } from './index.styled';
 import AppMenu from '../../_shared/AppMenu';
-import { FireFilled, FireOutlined } from '@ant-design/icons';
+import { FireFilled } from '@ant-design/icons';
+import { CourseEntity } from '../../../core/domain/courses/courses.types';
 
 type CourseCellProps = {
-  course: {
-    id: number;
-    title: string;
-    duration: string;
-    rating: number;
-    isCompleted: boolean;
-    thumb: string;
-  };
+  course: CourseEntity;
+
+  // {
+  //   id: number;
+  //   title: string;
+  //   duration: string;
+  //   rating: number;
+  //   isCompleted: boolean;
+  //   thumb: string;
+  // };
 };
 
 const CourseCell: React.FC<CourseCellProps> = ({ course }) => {
@@ -29,16 +32,16 @@ const CourseCell: React.FC<CourseCellProps> = ({ course }) => {
     <StyledCourseCell key={course.id} className="item-hover">
       <StyledCourseCellContent>
         <StyledCourseCellThumb>
-          <img alt="" src={course.thumb} />
+          {/* <img alt="" src={course.thumb} /> */}
         </StyledCourseCellThumb>
         <StyledCourseCellInfo>
-          <h3 className="text-truncate">{course.title}</h3>
-          <p className="text-truncate">{course.duration}</p>
+          <h3 className="text-truncate">{course.nome}</h3>
+          <p className="text-truncate">{course.duracao}</p>
         </StyledCourseCellInfo>
       </StyledCourseCellContent>
 
       <StyledCourseCellAction>
-        {course.isCompleted ? (
+        {/* {course.isCompleted ? (
           <div className="ant-row ant-row-middle">
             <StyledCourseCellRate>Avaliar</StyledCourseCellRate>
             <StyledCourseCellBtn type="primary">
@@ -46,14 +49,14 @@ const CourseCell: React.FC<CourseCellProps> = ({ course }) => {
             </StyledCourseCellBtn>
           </div>
         ) : (
-          <div className="ant-row ant-row-middle">
+          <div className="ant-row ant-row-middle"> */}
             <FireFilled />
-            <StyledCourseCellRating>{course.rating}</StyledCourseCellRating>
+            {/* <StyledCourseCellRating>{course.rating}</StyledCourseCellRating> */}
             <StyledCourseCellBtn className="btn-primary-outline">
               Detalhes
             </StyledCourseCellBtn>
-          </div>
-        )}
+          {/* </div>
+        )} */}
 
         <StyledCourseCellMenu>
           <AppMenu />

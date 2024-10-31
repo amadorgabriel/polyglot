@@ -202,7 +202,7 @@ export const StyledLanding = styled.body`
         --Brand,
         linear-gradient(99deg, #dbf047 -5.72%, #a7bd08 109.68%)
       );
-      transition: ease 0.2s;
+      transition: linear 0.4s;
       border: 1px solid transparent;
 
       &:hover {
