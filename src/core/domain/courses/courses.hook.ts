@@ -19,7 +19,7 @@ export function useCreateCourse() {
   return mutation;
 }
 
-export function useUpdateCourse(id: string, course: UpdateCourseDto) {
+export function useUpdateCourse(id: number, course: UpdateCourseDto) {
   const queryClient = useQueryClient();
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -30,19 +30,19 @@ export function useUpdateCourse(id: string, course: UpdateCourseDto) {
         content: 'Curso atualizado com sucesso!',
       });
 
-      queryClient.refetchQueries('courses');
+      queryClient.refetchQueries('all-courses');
     },
   });
 
   return mutation;
 }
 
-export function useDetailCourse(id: string) {
-  return useQuery(['courses', id], () => coursesService.detail(id), {
+export function useDetailCourse(id: number) {
+  return useQuery(['detail-courses', id], () => coursesService.detail(id), {
     enabled: !!id,
   });
 }
 
-export function useFindCourse() {
-  return useQuery(['courses'], () => coursesService.list());
+export function useFindCourses() {
+  return useQuery(['all-courses'], () => coursesService.list());
 }

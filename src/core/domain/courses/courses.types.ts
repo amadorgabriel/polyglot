@@ -1,17 +1,12 @@
 export interface CourseEntity {
-  id: string;
-  name: string;
-  description: string;
-  teacher_id: string;
-  price: string;
-  start_date: string;
-  end_date: string;
+  id: number;
+  nome: string;
+  descricao: string;
+  nivel: string;
+  duracao: number;
+  professorId: number;
+  dataInicio: string;
+  valor: number;
 }
 
-export interface UpdateCourseDto {
-  name: string;
-  description: string;
-  price: string;
-  start_date: string;
-  end_date: string;
-}
+export interface UpdateCourseDto extends Omit<CourseEntity, 'id'> {}
