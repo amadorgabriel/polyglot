@@ -38,7 +38,7 @@ export const StyledCard = styled(Card)`
   }
 
   & > .ant-card-body {
-    padding: 8px 20px 16px 20px;
+    padding: 16px 20px;
   }
 
   &.heightFull {

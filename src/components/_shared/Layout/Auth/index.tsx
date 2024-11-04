@@ -1,25 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import { ReactNode } from 'react';
 
 import { Segmented } from 'antd';
 import { useLocation } from 'react-router-dom';
 
 import { IUser } from '../../../../core/config/redux/auth/types';
 import { useAuthRoleAlternativesContext } from '../../../../core/contexts/auth/role-alternatives';
-import {
-  StyledAuth,
-  StyledAuthCard,
-  StyledAuthCardHeader,
-  StyledAuthMainContent,
-  StyledAuthWelContent,
-  StyledAuthWellAction,
-  StyledAuthWrap,
-} from './index.styled';
+import { StyledAuth, StyledAuthCard, StyledAuthCardHeader, StyledAuthMainContent, StyledAuthWelContent, StyledAuthWellAction, StyledAuthWrap } from './index.styled';
 
-type Props = {
-  children: React.ReactNode;
+type AuthWrapperProps = {
+  children: ReactNode;
 };
 
-export const AuthWrapper: React.FC<Props> = ({ children }) => {
+export const AuthWrapper = ({ children }: AuthWrapperProps) => {
   const { role, setRole } = useAuthRoleAlternativesContext();
 
   const { pathname } = useLocation();

@@ -8,6 +8,7 @@ export const StyledCourseCell = styled(List.Item)`
   padding: 8px 20px !important;
   align-items: flex-start;
   flex-wrap: nowrap;
+  width: 100%;
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.xs}px) {
     flex-direction: row;

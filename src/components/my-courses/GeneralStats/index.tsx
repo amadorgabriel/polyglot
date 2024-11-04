@@ -13,6 +13,7 @@ import {
   StyledGeneralStatsBadge,
   StyledGeneralStatsContent,
 } from './index.styled';
+import { Skeleton, Space } from 'antd';
 
 type getIconProps = {
   [key: string]: ReactNode;
@@ -26,31 +27,40 @@ const getIcon: getIconProps = {
 };
 
 type GeneralStatsProps = {
-  stats: AcademicStatsType;
+  stats: Omit<AcademicStatsType, 'id'>;
+  loading?: boolean;
 };
 
-const GeneralStats: React.FC<GeneralStatsProps> = ({ stats }) => {
+export const GeneralStats = ({ stats, loading = false }: GeneralStatsProps) => {
   return (
-    <AppCard heightFull className="card-hover">
-      <StyledGeneralStats>
-        <StyledGeneralStatsAvatar style={{ backgroundColor: stats.bgcolor }}>
-          {getIcon[stats.icon] ? getIcon[stats.icon] : getIcon['default']}
-        </StyledGeneralStatsAvatar>
+    <AppCard className="card-hover">
+      {!loading ? (
+        <StyledGeneralStats>
+          <StyledGeneralStatsAvatar style={{ backgroundColor: stats.bgcolor }}>
+            {getIcon[stats.icon] ? getIcon[stats.icon] : getIcon['default']}
+          </StyledGeneralStatsAvatar>
 
-        <StyledGeneralStatsContent>
-          <div>
-            <h3>{stats.count}</h3>
-            <p className="text-truncate">{stats.title}</p>
-          </div>
-          <StyledGeneralStatsBadge
-            style={{ backgroundColor: stats.bgcolor, color: stats.badgeColor }}
-          >
-            {stats.new}
-          </StyledGeneralStatsBadge>
-        </StyledGeneralStatsContent>
-      </StyledGeneralStats>
+          <StyledGeneralStatsContent>
+            <div>
+              <h3>{stats.count}</h3>
+              <p className="text-truncate">{stats.title}</p>
+            </div>
+            <StyledGeneralStatsBadge
+              style={{
+                backgroundColor: stats.bgcolor,
+                color: stats.badgeColor,
+              }}
+            >
+              {stats.new}
+            </StyledGeneralStatsBadge>
+          </StyledGeneralStatsContent>
+        </StyledGeneralStats>
+      ) : (
+        <Space>
+          <Skeleton.Avatar active size="large" shape="circle" />
+          <Skeleton.Input active />
+        </Space>
+      )}
     </AppCard>
   );
 };
-
-export default GeneralStats;

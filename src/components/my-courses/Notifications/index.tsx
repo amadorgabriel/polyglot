@@ -1,14 +1,21 @@
 import React from 'react';
+
 import { List } from 'antd';
+
+import AppCard from '../../_shared/AppCard';
+import { NotificationDataType } from '../../../core/types/my-courses';
 import {
-  StyledNotificationThumb,
   StyledNotificationContent,
   StyledNotificationItem,
+  StyledNotificationThumb,
 } from './index.styled';
-import AppCard from '../../_shared/AppCard';
 
 type NotificationItemProps = {
-  notification: any;
+  notification: NotificationDataType;
+};
+
+type NotificationsProps = {
+  notifications: NotificationDataType[];
 };
 
 const NotificationItem: React.FC<NotificationItemProps> = ({
@@ -32,11 +39,7 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
   );
 };
 
-type NotificationsProps = {
-  notifications: any[];
-};
-
-const Notifications: React.FC<NotificationsProps> = ({ notifications }) => {
+export const Notifications = ({ notifications }: NotificationsProps) => {
   return (
     <AppCard
       className="no-card-space-ltr-rtl"
@@ -56,5 +59,3 @@ const Notifications: React.FC<NotificationsProps> = ({ notifications }) => {
     </AppCard>
   );
 };
-
-export default Notifications;

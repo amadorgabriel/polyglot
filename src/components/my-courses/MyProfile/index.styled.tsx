@@ -26,7 +26,7 @@ export const StyledMyProfileInfo = styled.div`
   justify-content: center;
 
   & p {
-    margin-bottom: 8px;
+    margin: 0 0 18px 0;
     color: ${({ theme }) => theme.palette.text.secondary};
   }
 `;
@@ -53,7 +53,7 @@ export const StyledMyProfileAvatar = styled(Avatar)`
 `;
 
 export const StyledMyProfileTitle = styled.h3`
-  margin-bottom: 8px;
+  margin: 0;
   font-size: ${({ theme }) => theme.font.size.lg};
   font-weight: ${({ theme }) => theme.font.weight.bold};
 `;
@@ -99,7 +99,7 @@ export const StyledMyProfileFooterItem = styled.div`
   }
 
   & p {
-    margin-bottom: 0;
+    margin: 0;
   }
 
   & .text-truncate {
@@ -109,10 +109,11 @@ export const StyledMyProfileFooterItem = styled.div`
 `;
 
 export const StyledMyProfileThumb = styled.div`
-  margin-bottom: 12px;
-  width: 46px;
-  height: 46px;
+  margin-bottom: 8px;
+  width: 30px;
+  height: 30px;
 `;
+
 export const StyledMyProfileIcon = styled.div`
   margin-bottom: 8px;
   width: 30px;

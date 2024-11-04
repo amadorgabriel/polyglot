@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import AppCard from '../../_shared/AppCard';
 
 export const StyledPromoCard = styled(AppCard)`
-  background-color: #0A8FDC !important;
+  background-color: #0a8fdc !important;
   color: ${({ theme }) => theme.palette.primary.contrastText};
 `;
 
@@ -14,14 +14,15 @@ export const StyledPromoContent = styled.div`
   justify-content: center;
 
   & h3 {
-    margin-bottom: 8px;
-    font-size: ${({ theme }) => theme.font.size.base};
-    font-weight: ${({ theme }) => theme.font.weight.medium};
+    margin: 0;
+    font-weight: bold;
+    font-size: 1rem;
     color: ${({ theme }) => theme.palette.primary.contrastText};
   }
 
   & p {
-    margin-bottom: 12px;
+    color: white;
+    margin: 0 0 24px 0;
   }
 
   & .btn {

@@ -1,35 +1,24 @@
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 
-import { message } from 'antd';
 import coursesService from './courses.service';
-import { UpdateCourseDto } from './courses.types';
 
 export function useCreateCourse() {
-  const [messageApi, contextHolder] = message.useMessage();
+  const queryClient = useQueryClient();
 
   const mutation = useMutation(coursesService.create, {
     onSuccess(res) {
-      messageApi.open({
-        type: 'success',
-        content: 'Curso criado com sucesso!',
-      });
+      queryClient.refetchQueries('all-courses');
     },
   });
 
   return mutation;
 }
 
-export function useUpdateCourse(id: number, course: UpdateCourseDto) {
+export function useUpdateCourse() {
   const queryClient = useQueryClient();
-  const [messageApi, contextHolder] = message.useMessage();
 
   const mutation = useMutation(coursesService.update, {
     onSuccess(res) {
-      messageApi.open({
-        type: 'success',
-        content: 'Curso atualizado com sucesso!',
-      });
-
       queryClient.refetchQueries('all-courses');
     },
   });
@@ -39,16 +28,14 @@ export function useUpdateCourse(id: number, course: UpdateCourseDto) {
 
 export function useDeleteCourse() {
   const queryClient = useQueryClient();
-  const [messageApi, contextHolder] = message.useMessage();
 
   const mutation = useMutation(coursesService.delete, {
     onSuccess(res) {
-      messageApi.open({
-        type: 'success',
-        content: 'Curso excluído com sucesso!',
-      });
-
       queryClient.refetchQueries('all-courses');
+    },
+    onError(res) {
+      console.log('aaaaaaaaa');
+      console.log(res);
     },
   });
 

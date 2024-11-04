@@ -10,7 +10,7 @@ type AppRowContainerProps = {
   [x: string]: any;
 };
 
-const AppRowContainer: React.FC<AppRowContainerProps> = ({
+export const AppRowContainer: React.FC<AppRowContainerProps> = ({
   children,
   ...others
 }) => {
@@ -26,5 +26,3 @@ const AppRowContainer: React.FC<AppRowContainerProps> = ({
     </StyledAppRowContainer>
   );
 };
-
-export default AppRowContainer;

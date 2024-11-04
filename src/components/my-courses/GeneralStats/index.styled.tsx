@@ -42,13 +42,14 @@ export const StyledGeneralStatsContent = styled.div`
   flex-direction: row;
   justify-content: space-between;
   color: ${({ theme }) => theme.palette.text.secondary};
+  /* padding-top: 16px; */
 
   & p {
-    margin-bottom: 0;
+    margin: 0;
   }
 
   & h3 {
-    margin-bottom: 0;
+    margin: 0;
     font-size: 18px;
   }
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.lg}px) {

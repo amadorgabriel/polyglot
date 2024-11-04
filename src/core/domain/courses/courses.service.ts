@@ -11,16 +11,20 @@ export default {
     return result.data;
   },
   async create(courseDto: Omit<CourseEntity, 'id'>) {
-    return await jwtAxios.post<CourseEntity>(SERVICE_ENDPOINT, { courseDto });
+    return await jwtAxios.post<CourseEntity>(SERVICE_ENDPOINT, {
+      id: 0,
+      ...courseDto,
+    });
   },
-  async detail(id: number ): Promise<CourseEntity> {
+  async detail(id: number): Promise<CourseEntity> {
     const result = await jwtAxios.get<CourseEntity>(
       `${SERVICE_ENDPOINT}/${id}`
     );
     return result.data;
   },
-  async update({ id, courseDto }: { id: number ; courseDto: UpdateCourseDto }) {
+  async update({ id, courseDto }: { id: number; courseDto: UpdateCourseDto }) {
     return await jwtAxios.put<CourseEntity>(`${SERVICE_ENDPOINT}/${id}`, {
+      id: id,
       ...courseDto,
     });
   },

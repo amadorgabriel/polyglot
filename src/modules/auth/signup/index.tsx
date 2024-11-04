@@ -21,7 +21,7 @@ export function SignupPage() {
   const navigate = useNavigate();
   const [messageApi, contextHolder] = message.useMessage();
 
-  const { } = useAuthRoleAlternativesContext();
+  const { role, setRole } = useAuthRoleAlternativesContext();
 
   function signUp() {
     navigate(`/courses`);
@@ -119,6 +119,8 @@ export function SignupPage() {
           </StyledUserPages>
         </StyledUserContainer>
       </AuthWrapper>
+
+      {contextHolder}
     </>
   );
 }

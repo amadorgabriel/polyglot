@@ -1,5 +1,6 @@
-import React from 'react';
-import { UserOutlined } from '@ant-design/icons';
+import { AreaChartOutlined, UserOutlined } from '@ant-design/icons';
+
+import { ProfileType } from '../../../core/types/my-courses';
 import {
   StyledMyProfileAvatar,
   StyledMyProfileCard,
@@ -13,14 +14,15 @@ import {
 } from './index.styled';
 
 type MyProfileProps = {
-  profile: any;
+  profile: ProfileType;
+  loading?: boolean;
 };
 
-const MyProfile: React.FC<MyProfileProps> = ({ profile }) => {
+export const MyProfile = ({ profile, loading = false }: MyProfileProps) => {
   const { profile_pic, name, designation, achievements, friends } = profile;
 
   return (
-    <StyledMyProfileCard heightFull title="Meu perfil">
+    <StyledMyProfileCard title="Meu perfil">
       <StyledMyProfileContent>
         <StyledMyProfileInfo>
           <StyledMyProfileAvatar src={profile_pic} />
@@ -31,15 +33,12 @@ const MyProfile: React.FC<MyProfileProps> = ({ profile }) => {
         <StyledMyProfileFooter>
           <StyledMyProfileFooterItem>
             <StyledMyProfileThumb>
-              <img
-                src={
-                  'https://ivrnet.com/wp-content/uploads/2020/04/icon-aa-1.png'
-                }
-              />
+              <AreaChartOutlined style={{ fontSize: 34, color: '#3a9bfd' }} />
             </StyledMyProfileThumb>
             <h4>{achievements}</h4>
             <p className="text-truncate">Conquistas</p>
           </StyledMyProfileFooterItem>
+
           <StyledMyProfileFooterItem>
             <StyledMyProfileIcon>
               <UserOutlined style={{ fontSize: 34, color: '#FD3A84' }} />
@@ -52,5 +51,3 @@ const MyProfile: React.FC<MyProfileProps> = ({ profile }) => {
     </StyledMyProfileCard>
   );
 };
-
-export default MyProfile;

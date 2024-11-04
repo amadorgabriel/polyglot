@@ -1,8 +1,10 @@
+type CourseLevelEnum = 'Básico' | 'Intermediário' | 'Avançado';
+
 export interface CourseEntity {
   id: number;
   nome: string;
   descricao: string;
-  nivel: string;
+  nivel: CourseLevelEnum;
   duracao: number;
   professorId: number;
   dataInicio: string;
